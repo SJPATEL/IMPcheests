@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pythoncheatsheet.css">
+    <link rel="stylesheet" href="prism.css">
+    <script src="prism.js"></script>
+    <title>JAVA-SCRIPT Cheatsheet by Setu Patel</title>
+</head>
+<body>
+     
+    <nav class="nav">
+        <img id="logo" src="logo.jpeg" alt="">
+        JAVA-SCRIPT cheatsheets by S.J.PATEL
+    </nav>
+
+    <div id="scroll" class="scrollBar">
+        <img id="rmLogo" src="/removelogo.png" alt="Remove Scrollbar img">
+        <ul class="cheets">
+            <li class="cheet1"><a href="pythoncheet.html">PYTHON</a></li>
+            <li class="cheet1"><a href="HTML-CSS.html">HTML-CSS</a></li>
+            <li class="cheet2"><a href="JAVA-SCRIPT.html">JAVA-SCRIPT</a></li>
+            <li class="cheet3"><a href="PHP.html">PHP</a></li>
+            <li class="cheet4"><a href="BOOT-STARPS.html">BOOT-STRAP</a></li>
+        </ul>
+    </div>
+
+    <div class="div">
+        <ol>
+         <li>JAVA-SCRIPT<pre class="language-javascript"><code>// ECMA Script for java script (chack for updata in java-script)
+// **************************** for in loop *********************************** 
+// ITERATOR OBJECT 
+// let ferinds2 = {
+//     name1 : 'Setu',
+//     name2 : 'Yash',
+//     name3 : 'Raj',
+//     name4 : 'Mohan'
+// };
+// for (let key in ferinds2){
+//     console.log(ferinds2[key]);
+// }
+// let string = 'hello i am string ';
+// for (let key in string){
+//     console.log(string[key])
+// }
+
+// **************************** for of loop *********************************** 
+let ferinds = ['yash','viple','raj','mohan'];
+for (let name of ferinds){
+    console.log(name)
+}
+
+// crate/show table in console 
+console.table({ name: "setu", age: 18 });
+// show info and worning in console 
+console.info("please you are enter your diatail this form");
+console.warn("This is worning");
+console.error("This is error");
+
+// delete element in Array
+Array.splice(index, 1);
+
+// ################### scop ##################
+// let and const scope is block level
+// var scop is function lavel 
+
+// ======================&gt;relode window 
+window.location.relode();
+// ======================&gt;window path insert value  
+window.location = `/phpsetu/DATABASE/iNotes.php?delete=${e_value}`;
+
+// show html coding 
+let a = window.document;
+// print alert message 
+alert('he,you are not click ok button because it is dengeres')
+// Enter any word for user 
+prompt('he frinds , Enter your name');
+// ask qution 
+confirm('your age is 18 up ?');
+
+// show window higth and widht 
+a = innerHeight;
+a = innerWidth;
+
+// fuction for foreach 
+// Array.from(a).forEach(function(element){
+//     console.log(element);
+// }
+// friends = ["Yash","Yatic","Dharuv","Vipul"];
+// friends.forEach(function(element,index,arrey) {
+//     console.log(element,index,arrey);
+// });
+========================================&gt; DOM Manipulation
+// show all html coding
+let a = document;
+// show all tag in thml
+a = document.all;
+// show only html body in coding 
+a = document.body;
+// show form in html 
+a = document.forms;
+a = document.forms[0];
+// show link in html 
+a = document.links;
+a = document.links[0].href;
+
+// ################# print id and class ############
+
+// show html tag which it is class of .child
+let elem = document.getElementsByClassName('child')
+// show html tag which it is id of #my child 
+elem = document.getElementById('my child');
+// show all div tag in html (show html tag)
+elem = document.getElementsByTagName('div');
+
+// print html tag which it is id of my child
+let element = document.getElementById('my child');
+//print child node(text node) in tag which it is id of my child
+element = element.childNodes;
+// print parent for tag which it is id of my child
+element = element.parentNode;
+// chang color for tag which it is id of my child
+element.style.color = "red";
+// rgb color 
+// rang 0-255
+document.body.style.backgroundColor = `rgb(${e.offsetX},${e.offsetX},54)`;
+// inset and chang taxt in tag which it is id of my child
+element.innerText = "setu is good by";
+// insert and chang html coding in tag which it is id of my child
+element.innerHTML = " &lt;b&gt;setu is good by &lt;/b&gt;";
+// print inner html in this tag 
+console.log(element.innerHTML);
+// print inner text in this tag 
+console.log(element.innerText);
+
+// ######### qury selctor ####### 
+// print html tag which it is id of mychild
+let sel = document.querySelector('#mychild');
+// print html tag which it is class of child
+sel = document.querySelector('.child');
+// print div tag 
+sel = document.querySelector('div');
+
+// show all tag which it is class of child
+let elem = document.getElementsByClassName('child');
+// access one by one calss 
+console.log(elem[0]);
+//show html tag which it is id of mychild
+elem = document.getElementById('mychild');
+// print tag which it is class of container
+elem = document.getElementsByClassName('container');
+
+// print all tag if it is text of div
+elem = document.getElementsByTagName('div');
+// chang color text for in all  div tag
+Array.from(elem).forEach(element =&gt; {
+    console.log(elem);
+    element.style.color = 'red';
+});
+for (let index = 0; index &lt; elem.length; index++) {
+    const element = elem[index];
+    console.log(elem);
+    element.style.color = "red";
+}
+
+//print all text comment etc in tag if it is class of container
+let cont = document.querySelector(".container");
+console.log(cont.childNodes);
+//print only element(all tag) in tag if it is class of container
+console.log(cont.children);
+// print element in tag for follow index  if it is class of container
+let nodename = cont.childNodes[3].nodeName;
+// print elementnumber in tag for follow index  if it is class of container
+let nodeType = cont.childNodes[3].nodeType;
+// node type (element number)
+// 1 element
+// 2 Attribute 
+// 3 Text Node 
+// 8 Comment 
+// 9 document 
+// 10 doctype 
+
+let container = document.querySelector('div.container')
+// print all element in div.container 
+console.log(container.children);
+console.log(container.children[1]);
+console.log(container.children[1].children[0].children[0]);
+// print only type in container 
+console.log(container.firstChild);
+// print first tag in div.container 
+console.log(container.firstElementChild);
+// print last only type in container 
+console.log(container.lastChild);
+// print last element(tag) in div.container 
+console.log(container.lastElementChild);
+// print element number in div.container 
+console.log(container.childElementCount);
+// print first parentnode 
+console.log(container.firstElementChild.parentNode);
+// print next type in div.container
+console.log(container.firstElementChild.nextSibling);
+// print next next element in div.container
+console.log(container.firstElementChild.nextElementSibling.nextElementSibling);
+
+// ############ create element #############
+// create element 
+let element = document.createElement('li');
+// className for this element 
+element.className = 'child';
+// id for this element 
+element.id = 'child 1';
+//title for this element 
+element.setAttribute('title', 'mytitle');
+// select  div.links element
+let div = document.querySelector('div.links');
+// append this element in div.links 
+div.appendChild(element);
+// add text in this element 
+element.innerText = 'hello this is setu';
+// add html in this element 
+element.innerHTML = '&lt;b&gt;hello this is setu&lt;/b&gt;';
+// add text use of textnodes in this element 
+let text = document.createTextNode('i am text node');
+element.appendChild(text)
+// get value in aney element 
+console.log(text.vlaue);
+
+// #### replace element 
+let mydiv = document.getElementById('my div');
+// replace element 
+mydiv.replaceChild(element, document.getElementById('link1'));
+// remove child element in my div 
+mydiv.removeChild(document.getElementById('link2'));
+// print class for elem2 
+let pr = elem2.getAttribute('class');
+// print id for elem2 / get id for element 
+pr = elem2.getAttribute('id');
+// remove id for elem2 element 
+elem2.removeAttribute('id');
+
+// ############### events ##############
+
+// document.getElementById('h1').addEventListener('click',function(e){
+document.getElementById('h1').addEventListener('mouseover', function (e) {
+    let variable;
+    console.log('you are click this heading');
+    // print element for h1 
+    variable = e.target;
+    // print id for h1 
+    variable = e.target.className;
+    // print classlist for h1 
+    variable = e.target.classList;
+    console.log(variable);
+    console.log(e);
+    // target location 
+    location.href = "//google.com";
+    // print location for click only this element
+    variable = e.offsetX;
+    variable = e.offsetY;
+    // print location for click only this element window
+    variable = e.clientX;
+    variable = e.clientY;
+    console.log(variable);
+})
+
+let btn = document.getElementById('submit');
+// use only left click button 
+btn.addEventListener('click', func1);
+// dubl click event 
+// use all mouse button 
+btn.addEventListener('dblclick', func2);
+function func1(e) {
+    console.log("you are click button", e);
+    // use of submit button work (form not relode for after submit)
+    e.preventDefault();
+}
+// mouseenter event 
+document.querySelector('.form').addEventListener('mouseenter', enter_func);
+// mouseenter out 
+document.querySelector('.form').addEventListener('mouseout', enter_func);
+//mouseleave event 
+document.querySelector('.form').addEventListener('mouseleave', exit_func);
+//mouseleave mouseup 
+document.querySelector('.form').addEventListener('mouseup', exit_func);
+//mouseleave mousedown 
+document.querySelector('.form').addEventListener('mousedown', exit_func);
+// mousemove event 
+document.querySelector('.container').addEventListener('mousemove', move_func);
+function move_func(e) {
+    console.log(e.offsetX, e.offsetY);
+    document.body.style.backgroundColor = `rgb(${e.offsetX},${e.offsetX},54)`;
+}
+// blur Evaent 
+// it is used for out mouse pointer then is active 
+text.addEventListener('blur', function (e) {
+    elem.innerHTML = text.value;
+})
+// input event 
+// search.addEventListener('input',function(){
+
+// }
+
+// ############## local storage ############# 
+// localStorage is present all time 
+// add Name and Name2(key values) in colal storage 
+localStorage.setItem('Name', 'Harry');
+localStorage.setItem('Name2', 'setu');
+// clear localStorage function 
+localStorage.clear();
+// remove perticuler item in localStorage 
+localStorage.removeItem('Name2');
+// show Array formet in local storage 
+let FrindsArray = ['setu', 'yash', 'Tanvir']
+// insert item in localStorage for in string
+localStorage.setItem('Frinds', JSON.stringify(FrindsArray));
+// convert stirng into Array 
+name = JSON.parse(localStorage.getItem('Frinds'));
+// convert stirng  
+name = JSON.stringify(localStorage.getItem('Frinds'));
+// get item in local storage  function 
+let name = localStorage.getItem('Name8');
+console.log(name);
+// in console get item in local storage 
+localStorage.Name;
+localStorage.Frinds;
+
+// session storage is not  present all time
+sessionStorage.setItem('sessionName', 'sHarry');
+sessionStorage.setItem('sessionName2', 'ssetu');
+
+// exploring math obj 
+let z;
+z = Math;
+z = Math.PI;
+z = Math.E;
+z = Math.round(5.44);
+z = Math.ceil(5.44);
+z = Math.floor(4.555);
+z = Math.abs(-5.4);
+z = Math.sqrt(16);
+z = Math.pow(2, 3);
+z = Math.min(2, 3, 5, 7, 2);
+z = Math.max(2, 3, 5, 7, 2);
+z = 100 * Math.random();
+z = 90 + (100 - 90) * Math.random();
+z = Math.ceil(90 + (100 - 90) * Math.random());
+console.log(z);
+
+// ############## date obj ################ 
+// show date for today 
+let today = new Date();
+// write Date formate in java script 
+let otherDate = new Date('8-4-2008 10:05:50');
+otherDate = new Date('June 13 1970');
+otherDate = new Date('05/23/2003'); //mm/day/year
+
+let a ;
+// get Data in date and print that Date
+a = otherDate.getDate();
+// get day in date and print that day 
+a = otherDate.getDay();
+// get Minites in date and print that Minites 
+a = otherDate.getMinutes();
+// get Hours in date and print that Hours 
+a = otherDate.getHours();
+// get second in date and print that second 
+a = otherDate.getSeconds();
+// get fulltime in date and print that fulltime 
+a = otherDate.getTime();
+// get Milliseconds in date and print that Milliseconds 
+a = otherDate.getMilliseconds();
+// get Month in date and print that Month 
+a = otherDate.getMonth();
+// set Date 
+otherDate.setDate(23);
+// set Month 
+otherDate.setMonth(12);
+// set Year
+otherDate.setFullYear(1222);
+// set  Minutes
+otherDate.setMinutes(22);
+// set Date seconds
+otherDate.setSeconds(12);
+// set Date setHours
+otherDate.setHours(2);
+
+// ################# constructor ############### 
+// This is constructor 
+function Generalcars(givenname, givenspeed) {
+    this.name = givenname;
+    this.speed = givenspeed;
+    this.run = function () {
+        console.log(`${this.name} is runing`)
+    }
+    this.analyze = function () {
+        console.log(`this car is slower by ${200 - this.speed} then Mercedes`);
+    }
+}
+car = new Generalcars('Alto', 180);
+car2 = new Generalcars('maruti', 80);
+
+// ########## prototype #######
+// create constructor 
+function obj1(givenname) {
+    this.name = givenname;
+}
+// add new protorype in obj1 prototype 
+obj1.prototype.getName = function () {
+    return this.name
+}
+
+// ###############create Object in prototype
+// first type  
+const setu = Object.create(proto);
+setu.name = 'Setu';
+setu.role = 'coder';
+//second type
+const setu2 = Object.create(proto, {
+    name: { value: 'setu', writable: true },
+    role: { value: 'Coder' }
+})
+setu2.changName('patel');
+console.log(setu2);
+
+//############# inharit constructor 
+// create Employ construcotr 
+function imp(name, salary, experience) {
+    this.name = name;
+    this.salary = salary;
+    this.experience = experience;
+}
+console.log(imp);
+// add prototype in imp constructor
+imp.prototype.slogne = function () {
+    return ` This imploy is the best he is name of ${this.name}`;
+}
+// create object 
+let setu = new imp('SetuPatel', 50000, 3);
+// create Programer constructor and it is inherit of imp constructor
+function Programer(name, salary, experience, language) {
+    imp.call(this, name, salary, experience);
+    this.language = language;
+}
+// inherit this proto type 
+Programer.prototype = Object.create(imp.prototype);
+// Manually set constructor 
+Programer.prototype.constructor = Programer;
+// create object 
+let yash = new Programer('yashPatel', 20000, 5, 'python');
+console.log(yash);
+
+// ########## create classes and inhatitence classes
+// create imp class 
+class imp {
+    constructor(givenName, givenExperience, givenDivision) {
+        this.name = givenName;
+        this.experience = givenExperience;
+        this.division = givenDivision;
+    }
+    // create Prototype 
+    slogen() {
+        return `I am ${this.name} the best`;
+    }
+    // create Prototype 
+    joinYear() {
+        return ` you are joine this company for ${2022 - this.experience} Years`
+    }
+    //  you are not use this. in static fucntion 
+    static add(a, b) {
+        return a + b;
+    }
+}
+// imp = new imp('setu',22,'A');
+// console.log(imp.joinYear());
+//  console.log(imp.add(4,5));
+
+// create Programer class and it is inherit for imp class 
+class Programer extends imp {
+    constructor(givenName, givenExperience, givenDivision, language, github) {
+        // imp class member
+        super(givenName, givenExperience, givenDivision);
+        this.language = language;
+        this.github = github;
+    }
+    // create prototype 
+    feveratelanguage() {
+        return ` you faverate language is ${this.language}`;
+    }
+}
+// create object 
+setu = new Programer('setu', 5, 'lays', 'html-css', 'setu999');
+console.log(setu);
+console.log(setu.feveratelanguage());
+
+============&gt; SYNCHRONOUS
+noly one boys all work done. 
+
+============&gt; ASYNCHRONOUS
+=&gt;money boys  all work complate.
+=&gt;TYPE OF THREE 1]ASYNC/AWAIT
+                2] CALLBACK
+                3] PROMISES
+
+===========&gt; Ajax (asynchronose,javascript,xml)
+=&gt;not page is relode
+=&gt;beter user exprience
+=&gt;save network bandwith
+
+
+=====================&gt;xhr
+ // instantial an xhr object (open xhr object)
+ const xhr = new XMLHttpRequest();
+
+ // open the boject (get requvesh)
+ xhr.open('GET','https://jsonplaceholder.typicode.com/todos/1',true)
+ // GET = only give url
+ // getdata , place of data , Asynchronose and synchronose
+
+ // on progrees senner (losing event use)
+ xhr.onprogress = function(){
+     console.log('On progress');
+     // 200 is http url
+
+
+xhr.onload = function() {
+    // 200 is http url 
+    if(this.status === 200){
+       let obj = JSON.parse(this.responseText); 
+       console.log(obj)
+       let list = document.getElementById('list');
+       str = "";
+       for (key in obj){
+           str += `&lt;li&gt; ${obj[key].id}&lt;/li&gt;`
+       }
+       list.innerHTML = str;
+    }
+    else{
+        console.log('some error noccured')
+    }
+} 
+// send the request
+xhr.send();
+
+================&gt; coll back function
+=&gt; function in fucntion
+
+function enrollStudent(students,collback)
+{
+    // setTimeout is run only one time 
+    setTimeout(function() {
+        student.push(students);
+        console.log('student has been enroll');
+        collback(); //this is collback fucntion
+    }, 3000);
+     // setInterval is run for repeted 
+    setInterval(function() {
+        student.push(students);
+        console.log('student has been enroll');
+        collback(); //this is collback fucntion
+    }, 3000);
+}
+let settimeout = setTimeout(function,2000);
+settimeout = setInterval(function,2000);
+
+// The clearTimeout is used for cansle setTimeout (break run setTimeout function)
+let clearTimeout = clearTimeout(settimeout);
+// The clearInterval is used for cansle setInterval (break run setInterval function)
+let clearTimeout = clearInterval(settimeout);
+
+==================&gt; Promise fucntion
+// Promise
+// -resolve
+// -reject
+// -panding
+
+function func1(){
+    return new Promise(function(resolve,reject){
+        setTimeout(() =&gt; {
+            const error = true;
+            if(!error){
+                console.log();
+                resolve();
+            }
+            else{
+                console.log();
+                reject();
+            }
+        }, 2000);
+    })
+}
+// fucnction insede then is as = resolve()
+// fucnction insede catch is as = reject()
+func1().then(function(){
+    console.log();
+}).catch(function(error){
+    console.log( error);
+})
+
+==================&gt; Arrow function
+// Arrow function 
+const setu2 = () =&gt;{
+    console.log('this is setu2 Arrow function')
+}
+
+// oneline function and do not require retrun , {}
+const greet =() =&gt;'Good Morning';
+
+// return object syntaxe
+const greet_obj =() =&gt;({name :'setu'});
+
+// without () syntaxe 
+const greet_obj1 = name =&gt;'Good Morning ' + name ;
+const greet_obj2 =(name,name2) =&gt;'Good Morning ' + name + ' ' + name2;
+
+===============================&gt;fetch data 
+
+// fetch datat (get reqiest)
+function getData(){   
+    url = "/setu.txt";
+    // background process start and that is show last 
+    fetch(url).then((response)=&gt;{       
+        return response.text();
+    }).then((data)=&gt;{       
+        console.log(data);
+    })
+}
+// online fetch data from api.github.com/user 
+function getData(){
+    url = "https://api.github.com/users";
+    // background process start and that is show last 
+    fetch(url).then((response)=&gt;{
+        // Response.JSON() is retrun text  = Response.text()
+        return response.json();
+        // return response.text();
+    }).then((data)=&gt;{
+        console.log(data);
+    })
+}
+
+// ============&gt; post reqiest
+// online fetch data from http://dummy.restapiexample.com/
+function postData(){
+    url = "https://dummy.restapiexample.com/api/v1/create";
+    // changet name 
+    data ='{"name":"setu234545","salary":"123","age":"23"}'
+    params = {
+        method : 'post',
+        headers: {
+            'Content-Type':'application/json'
+        },
+        body: data
+    }
+    fetch(url,params).then((response)=&gt; response.json())
+    .then(data=&gt; console.log(data)
+    )
+}
+
+=========================&gt;async/await 
+=&gt;async return promise 
+
+async function setu(){
+    console.log('inner function')//3
+    const respnse = await fetch('https://api.github.com/users'); //6
+    console.log('before response');//6
+    // respnse.json() is return text 
+    const user = await respnse.json(); //7
+    console.log('users resolved'); //7
+    return user; 
+}
+
+console.log('Before function run'); //2
+let a = setu();
+console.log('After function run');//4
+console.log(a) //5
+a.then(data =&gt; console.log(data)) //8
+console.log('Last line of this js file');
+
+==========================&gt;error heandling 
+
+if (a!=undefined){
+    // throw error and type error message 
+    throw new Error('This is not undefined')
+}else{
+    console.log("this is undifined")
+}
+// error heandling leddar | that is use for when you are not throw error 
+try{
+    setu();
+    console.log('this try');
+
+}catch(error){
+    console.log(error);
+    console.log(error.name);
+    console.log(error.message);
+}finally{
+    console.log('this is finally block');
+}
+
+==========================&gt;regular experience 
+
+// syntext for ragular expression 
+let reg = /setu/;
+// g ==&gt; hear flage g(globle) is used for match on to more word 
+reg = /setu/g;
+// i ==&gt; hear flage i(insensitive) is used for match like allChar=allchar(setu=SeTu)
+reg = /setu/i;
+
+console.log(reg);         // /setu/
+console.log(reg.source); //setu
+
+let s = 'This is great code with setu and setu is good coder';
+
+// list of Function to match expression(string)
+// ===&gt; 1. exec() =&gt; This function will return an array for match or null retrun for no match 
+let result = reg.exec(s);
+console.log(result);
+console.log(result.input);
+console.log(result.index);
+
+// ===&gt; 2. test() =&gt; This function will return true and false 
+result = reg.test(s)
+console.log(result);
+
+// ===&gt; 3. match() =&gt; This function will return and array of result or null for not any match | if globel match will be retrun ['string']
+result = s.match(reg)
+console.log(result);
+
+// ===&gt; 4. search() =&gt; Retrun index of first match else -1 
+result = s.search(reg)
+console.log(result);
+
+// ===&gt; 5. search() =&gt; Return new replaced string with all replacement (if not flag is given,only first match be resplaced)
+result = s.replace(reg , 'Raj')
+console.log(result);
+
+==================================&gt; metacharacters 
+
+let regex = /setu/;
+//^ ===&gt; hear ^ is use for will be match start char of string 
+regex = /^se/;
+//$ ===&gt; hear $ is use for will be match end char of allstring 
+regex = /tu$/;
+//. ===&gt; hear . is use for will be match any char (.==anychar)
+regex = /s.tu/;
+regex = /..tu/;
+//* ===&gt; hear * is use for will be match any 0 or more char (*==wwweieoeoei)
+regex = /s*tu/;
+//? ===&gt; hear ?(optional) is use for will be char is option(char present or unpresent)
+regex = /ses?tue?/;
+regex = /ses?tue?s/;
+// hear /s\*tu/ is match for s*tu
+regex = /s\*tu/;
+
+==============================&gt; Regular Expressions - Character sets 
+// (only one char match in [])
+
+let regex =/s[a-z]tu/; // hear [a-z] == a,b,c,d,.......,x,y,z
+regex =/s[abc]tu/;  // hear [abc] == a,b,c
+regex =/s[^ab]t[url]/;  // hear [^et] != e,t
+regex =/s[^ab]t[url0-9]/;  // hear [0-9] == 0,1,2,3,4,5,6,7,8,9
+
+//Quantifiers
+regex = /set{2}u/ // hear t is two time 
+regex = /set{0,3}u/ // hear t is one ,two and three time
+regex = /s(et){2}u/ // hear two time for et
+
+=====================&gt; Regular Expression =&gt; shortheand charecter classes 
+
+let regex = /\wsk/;      //heare  w is _ or alphabet or numbers
+regex = /\w+sk/;         //heare  w+ means one or morre _ or alphabet or numbers
+regex = /\Wis/;          //heare  w means non word charcter
+regex = /\W+sk/;         //heare  w+ means one to more non word charcter
+regex = /number \d222/;  //heare  \d means digit
+regex = /22\d+222/;      //heare  \d means more then one digit
+regex = /\D222/;         //heare  \D non digit
+regex = /\D+222/;        //heare  \D more then one non digit
+regex = /\sbhai/;        //heare  \s means match whitespace character
+regex = /\s+bhai/;       //heare  \s+ means match one or more whitespace character
+regex = /\Sbhai/;        //heare  \S means match non whitespace character
+regex = /\S+bhai/;       //heare  \S+ means match one or more non whitespace character
+regex = /hai\b/;         //heare  \b means  word boundary
+
+==========================&gt; Assertion
+regex = /s(?=y)/
+regex = /s(?!y)/
+
+==========================&gt; add class in class list
+email.classList.add('is-invalid')
+email.classList.remove('is-invalid')
+
+===========================&gt; iterators (syntex)
+
+function iterators(valuees){
+    let iteratorsitems = 0;
+    return {
+        next : function () {
+            if (iteratorsitems &lt; valuees.length){
+                return{
+                    value : valuees[iteratorsitems++],
+                    done : false
+                }
+            }else{
+                return{
+                    done : true
+                }
+            }
+        }
+    }
+}
+let fruite = ['Apple','Banana','Mango','Bhindi','Orange'];
+let fruite_iterator = iterators(fruite);
+console.log(fruite_iterator.next().value);
+console.log(fruite_iterator.next().value);
+console.log(fruite_iterator.next().value);
+console.log(fruite_iterator.next().value);
+
+=================================&gt; Generators (syntex)
+
+function* numbersGen(){
+    let i = 0;
+    // yield 1;
+    // yield 2;
+    // yield 3;
+    // yield 4;
+    while(true){
+        yield i++;
+    }
+}
+const gen = numbersGen();
+console.log(gen.next());
+console.log(gen.next());
+console.log(gen.next());
+
+=================================&gt;Set 
+// Set is not print repeted value 
+//Initalize an empty Set
+const mySet = new Set(); 
+console.log(mySet);
+// add element in Set
+mySet.add("this");
+mySet.add("this");
+mySet.add("that");
+mySet.add(1212);
+mySet.add(true);
+mySet.add(false);
+mySet.add("is my name");
+console.log("this is look", mySet);
+
+// Set constructer
+let myset2 = new Set ([1,32,'setu',true,false,{a:3,b:4}])
+console.log("This is New Set" , myset2)
+
+// check for element is present or not in Set 
+console.log(mySet.has('this is ')) // if element is not  present false 
+console.log(mySet.has('this ')) // if element is present true
+
+// remove element  in Set 
+mySet.delete("this")
+console.log("this is look for after remove element in Set  g", mySet);
+
+// Iterating a Set 
+for (let itmes of mySet){
+    console.log("item is " , itmes)
+}
+mySet.forEach(element =&gt; {
+    console.log("item is for for ecach loop use " , element )
+});
+
+// Convert Set in array /convert array
+let array = Array.from(mySet);
+console.log(array)      
+
+===================================================&gt; Symbole
+// that is use for unice key 
+// if Symbole is same but that is not same
+const sym1 = Symbol("this is symbole");
+const sym2 = Symbol("this is symbole");
+console.log(sym1);
+console.log(sym1 === sym2); // false
+
+myobj = {}
+myobj[sym1] = 'setu';
+myobj[sym2] = 'patel';
+console.log(myobj[sym1]);
+
+===============================&gt; destruction 
+let a,b;
+[a,b] = [53,54];
+console.log(a,b);
+
+// heare a,b,c is vlaue given 1,2,3 and d is given all other value in array 
+[a, b, c, ...d] = [1,2,3,4,5,6,7,8,9,10,11,12,13];
+console.log(a);
+console.log(b);
+console.log(c);
+console.log(d);
+
+// hear value is given a:33,b:23,c:53 and {d:54 ,e:55}
+({a,b,c, ...d}={a: 33, b: 23, c: 53, d:54, e: 55});
+console.log(a);
+console.log(b);
+console.log(c);
+console.log(d);
+
+const fruit = ['Apple','Banana','Mangos'];
+[a,b,c]=fruit;
+console.log(a,b,c)
+
+// Object destruction 
+const obj = {
+    a : 23,
+    b : 24,
+    c : 'stu',
+    d : 'coder'
+}
+const {a,b,c,d,e} = obj;
+console.log(a,b,c,d,e);
+
+============================&gt; The onclick is used for run fucntion in any html tag 
+// run function for click 
+/* &lt;div class="container" onclick="function()"&gt;  */
+// run unction in html tag onlode
+/* &lt;div class="container" onload="function(); setInterval();"&gt; */
+
+===========================================&gt; drag and drop img 
+
+const imgBox = document.querySelector('.imgbox');
+const whiteboxes = document.getElementsByClassName("drag1");
+
+// That event  is use for draggable element 
+imgBox.addEventListener('dragstart', (e) =&gt; {
+    console.log('This is dragstart has been treeger');
+    e.target.className += ' hold'
+   
+    setTimeout(() =&gt; {
+        e.target.className=' hide'
+    }, 0);
+})
+imgBox.addEventListener('dragend', (e) =&gt; {
+    console.log('This is dragend has been treeger');
+    e.target.className = ' imgbox';
+})
+
+for (whitbox of whiteboxes) {
+    whitbox.addEventListener('dragover', (e) =&gt; {
+        // That is use for drop elemtn 
+        e.preventDefault();
+        console.log('dragover');                                                          
+    })
+
+    whitbox.addEventListener('dragenter', () =&gt; {
+        console.log('dragenter');                                                          
+    })
+
+    whitbox.addEventListener('dragleave', () =&gt; {
+        console.log('dragleave');                                                          
+    })
+    whitbox.addEventListener('drop', (e) =&gt; {
+        console.log('drop');
+        e.target.append(imgBox);                                                          
+    })
+}
+============================================&gt; sub str string function  
+snoEdit.value = e.target.id.substr(1,);
+
+================================&gt; claculater function 
+/* That is use for calculate value  */
+let Calculate = element.eval();
+
+================================&gt; Play Audio 
+let Audioturn = new Audio("/music/x_0.wav");
+let gameover = new Audio("/music/winnersong.wav");
+Audioturn.play();
+var audio = document.createElement('audio');
+audio.setAttribute('src' ,'go-kart-racing-33647.mp3')
+
+================================&gt; onkeydown function
+// That mine if  any one key preess in keyboard that fucntion is execute 
+document.onkeydown  = function(e) {
+    // The key e.keyCode is use for get key code in keyboard 
+    // console.log("Key code is :", e.keyCode);
+    if(e.keyCode == 38){
+ 
+    }
+    
+} </code></pre></li>
+            
+       </ol>
+    </div>
+
+
+<script src="/Cheetsheet.js"></script>
+</body>
+</html>

@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pythoncheatsheet.css">
+    <link rel="stylesheet" href="prism.css">
+    <script src="prism.js"></script>
+    <title>PHP Cheatsheet by Setu Patel</title>
+</head>
+<body>
+     
+    <nav class="nav">
+        <img id="logo" src="logo.jpeg" alt="">
+        PHP cheatsheets by S.J.PATEL
+    </nav>
+
+    <div id="scroll" class="scrollBar">
+        <img id="rmLogo" src="/removelogo.png" alt="Remove Scrollbar img">
+        <ul class="cheets">
+            <li class="cheet1"><a href="pythoncheet.html">PYTHON</a></li>
+            <li class="cheet1"><a href="HTML-CSS.html">HTML-CSS</a></li>
+            <li class="cheet2"><a href="JAVA-SCRIPT.html">JAVA-SCRIPT</a></li>
+            <li class="cheet3"><a href="PHP.html">PHP</a></li>
+            <li class="cheet4"><a href="BOOT-STARPS.html">BOOT-STRAP</a></li>
+        </ul>
+    </div>
+
+    <div class="div">
+        <ol>
+         <li>PHP<pre class="language-javascript"><code> &lt;!-- first start you jame  --&gt;
+
+&lt;!-- php basice forment  --&gt;
+&lt;?php  //opening php tag 
+// hear echo is use for print word 
+echo "This is setu file";
+?&gt;  
+
+&lt;!-- new line  --&gt;
+echo "&lt;br&gt;"
+
+&lt;!--==============================&gt; php variable --&gt;
+&lt;!-- ====&gt; Rulse for creating variable  --&gt;
+1 =&gt; Variable start with $ 
+2 =&gt; Must can not start with number 
+3 =&gt; Must start with letter and underscore 
+3 =&gt; Must start with letter and underscore 
+4 =&gt; variable are casesensitive  ($setu != $SETU)
+
+&lt;?php
+$name = "setu";
+// $income = 100;
+$income = 100.5;
+$Name = "Patel";
+
+echo "That is boy is $name and his salry is $income &lt;br&gt; ";
+echo "That is boy is $Name &lt;br&gt; ";
+echo "That is boy is $name &lt;br&gt; ";
+echo "and his salry is $income &lt;br&gt;"
+?&gt;
+&lt;!-- ========================&gt; scop of variable  --&gt;
+
+&lt;?php
+
+echo "This tutorial is scop of variable ";
+echo "&lt;br&gt;";
+
+$s = 98; // Global variable
+
+function var_scop(){
+    // $s = 88; // local variable
+    global $s; // The global key word is use for access global variable 
+    $s  = 45;
+    echo "Your variable value is $s";
+}
+
+var_scop();
+echo "&lt;br&gt;";
+echo $s;
+// echo  var_dump($GLOBALS);
+echo  var_dump($GLOBALS['s']);
+?&gt;
+&lt;!--==============================&gt; isset() function --&gt;
+if(isset($_GET['delete'])){
+    $sno = $_GET['delete'];
+    echo $sno;
+}
+&lt;!--==============================&gt; php DataType --&gt;
+&lt;?php 
+$name = "setu";
+$income = 200;
+// var_dump is function and that is use for print data type 
+echo var_dump($name)
+/*php data type
+1. String
+2. Integer
+3. Float
+4. Boolean
+5. Object
+6. Array
+        echo array("setu","patel",23);
+        start index 0
+7. Null
+*/
+?&gt;
+
+&lt;!--==============================&gt; String function --&gt;
+&lt;?php
+// coutn($arry)
+$name = "setu is good boy";
+// 1 strlen()    //print length of string 
+// string joint is uses for . 
+echo strlen($name);
+echo "&lt;br&gt;";
+echo "This boy name is " . ($name);
+echo "&lt;br&gt;";
+// 2 str_word_count()    //print count word in string
+echo str_word_count($name);
+echo "&lt;br&gt;";
+// 3 strrev()    //print reverse string 
+echo strrev($name);
+echo "&lt;br&gt;";
+// 4 strpos()    //print position string char/word
+echo strpos($name, 'good');
+echo "&lt;br&gt;";
+// 5 str_replace()    //replace string 
+echo str_replace("setu" , "patel" , $name);
+$comment =str_replace("&gt;" , "&gt;" , $comment);
+echo "&lt;br&gt;";
+// 6 str_repeat()    //repeat string 
+echo str_repeat( $name ,5);
+echo "&lt;br&gt;";
+// 7 rtrim()    //remove right space 
+echo rtrim("setu   ");
+// echo "&lt;br&gt;";
+// 7 ltrim()    //remove left space 
+echo ltrim("   setu");
+echo "&lt;br&gt;";
+// 8 substr(); //show your choise char 
+echo substr($string , start ,char);
+
+?&gt;
+
+&lt;!-- not equalto operatore  --&gt;
+&lt;?php
+$x = 40;
+$y = 45;
+echo var_dump($x&lt;&gt;$y);
+?&gt;
+
+&lt;!-- ================================&gt; function  --&gt;
+&lt;?php
+function processMarks($marksarray){
+    $sum = 0;
+    foreach ($marksarray as $value) {
+       $sum += $value;
+    }
+    return $sum;
+}
+
+$rohen = [10,30,50,60,90,100];
+$sumMarks = processMarks($rohen);
+echo "Rohan total marks is $sumMarks &lt;br&gt;";
+?&gt;
+
+&lt;!-- =============================&gt; php date  --&gt;
+&lt;?php
+// php.net.data
+// https://www.php.net/manual/en/datetime.format.php
+echo "this is tutorial is Data fucntion"
+$year = date("Y");
+echo "$year";
+?&gt;
+
+&lt;!-- ==========================================&gt; Associative Array and Index Array --&gt;
+&lt;?php
+// This are called index array 
+$arr = array("setu","patel",23);
+// This are called Associative array 
+$favcol = array(
+    'setu' =&gt; 'blue',
+    'Mohan' =&gt; 'yellow',
+     8 =&gt; 'red'
+);
+// echo $favcol['setu'];
+// echo '&lt;br&gt;';
+// echo $favcol['Mohan'] ;
+// echo $favcol[8];
+
+foreach ($favcol as $key =&gt; $value) {
+    echo "The key is $key and That is value is $value";
+    echo "&lt;br&gt;";
+}
+?&gt;
+
+====================================&gt; Multidimation Array
+&lt;?php
+echo "This is tutorial is Multidimation Array";
+echo "&lt;br&gt;";
+// Two dimation array
+$Multi = array(
+    array(1,2,3,4),
+    array(5,7,8,9),
+    array(9,5,8,4)
+);
+
+for ($i=0; $i &lt; count($Multi) ; $i++) { 
+    
+    for ($j=0; $j &lt; count($Multi[$i]); $j++) { 
+        echo $Multi[$i][$j];
+    }
+    echo "&lt;br&gt;";
+}
+// Three dimation array 
+$Multi = array(
+    array(
+       array(1,2,3,4),  
+       array(4,0,9,5),  
+       array(5,6,7,8),  )
+
+);
+for ($i=0; $i &lt; count($Multi) ; $i++) { 
+    
+    for ($j=0; $j &lt; count($Multi[$i]); $j++) { 
+
+        for ($l=0; $l &lt; count($Multi[$i]); $l++) { 
+           echo $Multi[$i][$j][$l];
+        }
+        echo "&lt;br&gt;";
+    }
+    
+}
+?&gt;
+=============================&gt; get url for current page
+&lt;?php  
+$_SERVER['PHP_SELF']; =&gt;http://localhost/phpsetu/Forum/thradsList.php
+
+echo $_SERVER['REQUEST_URI'];=&gt;http://localhost/phpsetu/Forum/thradsList.php?catid=1
+
+?&gt;
+=============================&gt; check server Request Method and string concet
+&lt;?php
+// ======= &gt;function of chack request method (GET/POST)
+            if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+//=============&gt; name for post request 
+                $email = $_POST['email'];
+                $password = $_POST['pass'];
+// ======= &gt;example of string concet          
+                echo '&lt;div class="alert alert-warning alert-dismissible fade show" role="alert"&gt;
+                        &lt;strong&gt;Success!&lt;/strong&gt; Your '. $email.'  and  ' .$password .' has been submitted successfully !
+                        &lt;button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"&gt;&lt;/button&gt;
+                    &lt;/div&gt;';
+            }
+?&gt;
+
+=============================&gt; Connecting and Create database MySQL
+&lt;?php
+/* Ways for connect to a MySQL Database 
+1 MySQL i extension 
+2 PDO (php data object)
+*/
+
+//============&gt; Connecting to the Database 
+$servername = "localhost";
+$username = "root";
+$password = "";
+
+//=============&gt; Create a connection 
+$conn = mysqli_connect($servername, $username , $password);
+// throw error 
+if(!$conn){
+//=============&gt; die function is used to for run with exit hear 
+    die("Sorry we faild to connect :" . mysqli_connect_error());
+}
+else{
+    echo "connected successfully";
+}
+
+//=================&gt; Create db 
+// query for create db 
+$sql = "CREATE DATABASE setu5";
+// run query / that is return true or fulse
+$result = mysqli_query($conn,$sql);
+
+// Check for data are create successfully or not? 
+if ($result){
+    echo "The db was created successfully &lt;br&gt;";
+}
+else{
+    echo "The db was not created successfully because of this error ======&gt; " . mysqli_connect_error();
+}
+?&gt;
+
+====================================&gt; Create Table in db connecting data base 
+&lt;?php
+//============&gt; Connecting to the Database 
+$servername = "localhost";
+$username = "root";
+$password = "";
+// work for this data base 
+$database ="setu5";
+
+//=============&gt; Create a connection 
+$conn = mysqli_connect($servername, $username , $password , $database);
+// throw error 
+if(!$conn){
+//=============&gt; die function is used to for run with exit hear 
+    die("Sorry we faild to connect :" . mysqli_connect_error());
+}
+else{
+    echo "connected successfully";
+}
+
+//=================&gt; Create Tabel in db
+$sql = "CREATE TABLE `setu5` (`s_no` INT(5) NOT NULL AUTO_INCREMENT , `Name` VARCHAR(20) NOT NULL , `Datajoin` DATE NOT NULL , PRIMARY KEY (`s_no`))" ;
+// run query 
+$result = mysqli_query($conn,$sql);
+
+// Check for create table in database are create successfully or not? 
+if ($result){
+    echo "The db was created successfully &lt;br&gt;";
+}
+else{
+    echo "The db was not created successfully because of this error ======&gt; " . mysqli_connect_error();
+}
+
+===================================================&gt; insert Data in Table 
+
+// $sql = "INSERT INTO `student` ( `Name`, `Datajoin`) VALUES ( 'MOHAN PATEL', '2023-07-01');" ;
+
+// insert data using to be variable 
+$name = "MANISH RATHOD";
+$joineData = "2020-09-01";
+
+$sql = "INSERT INTO `student` ( `Name`, `Datajoin`) VALUES ( '$name', '$joineData');" ;
+// run query 
+$result = mysqli_query($conn,$sql);
+
+// Check for create table in database are create successfully or not? 
+if ($result){
+    echo "The data insert successfully in student table  &lt;br&gt;";
+}
+else{
+    echo "The data are not insert successfully in student table because of this error ======&gt; " . mysqli_connect_error();
+}
+?&gt;
+
+=====================================&gt; display the data in database
+&lt;?php
+echo "This tutorial is selecte data and display";
+
+//============&gt; Connecting to the Database 
+----------
+
+$sql = "SELECT * FROM `student`";
+$result = mysqli_query($conn, $sql);
+
+====================&gt; return number of row in tabledb
+$num = mysqli_num_rows($result);
+echo $num;
+echo "&lt;br&gt;";
+
+if($num &gt;0){
+================&gt; That is return row one by one fetch 
+    $row = mysqli_fetch_assoc($result);
+    echo var_dump($row);
+    echo "&lt;br&gt;";
+    $row = mysqli_fetch_assoc($result);
+    echo var_dump($row);
+    echo "&lt;br&gt;";
+  
+// ==================&gt; return row using whiel loop 
+while($row = mysqli_fetch_assoc($result)){
+    // echo var_dump($row);
+    
+    // on by on print 
+    echo $row['s_no'] . "Hello  " . $row['Name'] . "You are joining for " . $row['Datajoin'];
+    echo "&lt;br&gt;";
+}
+}
+
+// =========================&gt; display the recourd for your choice 
+$sql = "SELECT * FROM `student` WHERE `Name`='SETU' ";
+$result = mysqli_query($conn, $sql);
+
+// ====================&gt; return number of row in tabledb / fetch data from data base 
+$num = mysqli_num_rows($result);
+echo $num;
+echo "&lt;br&gt;";
+$number = 1;
+if($num&gt;0){
+    while($row = mysqli_fetch_assoc($result)){
+        echo $number . " hello " . $row['Name'] . " You are joining " . $row['Datajoin'];
+        echo "&lt;br&gt;";
+        $number ++;
+    }
+}
+
+=========================&gt; Updata data in database 
+$sql = "UPDATE `student` SET `Name` = 'MOHAN' WHERE `student`.`s_no` = 5;";
+$result = mysqli_query($conn, $sql);
+// ================&gt;Print number of affected row 
+$aff = mysqli_affected_rows($conn);
+echo "affected  row " . $aff;
+if($result){
+    echo "Your query is update successfully";
+    echo '&lt;br&gt;';
+}else{
+    echo "Your query is not update successfully";
+    echo '&lt;br&gt;';
+}
+
+=================================== delete record in table 
+// delete record in table  
+$sql = "DELETE FROM `com_sharholder` WHERE `SNo` = 3" ;
+// delete Limit record in table  
+$sql = "DELETE FROM `com_sharholder` WHERE `SNo` = 3 LIMIT 1"  ;
+
+$result = mysqli_query($conn,$sql);
+// echo var_dump($result);
+if($result){
+    echo "data delete successfully";
+    echo "&lt;br&gt;";
+}else{
+    echo "data delete not successfully";
+    echo "&lt;br&gt;";
+}
+?&gt;
+
+=================================== require and include
+&lt;?php
+// include and require is use for add onther file in that current file 
+// deffernce between include and require :-- 
+// include :=&gt; if not exist file in include file , that is throw worning but not error
+// require :=&gt; if not exist file in include file , that is throw error 
+    include 'CONNECTDATABASE.php';
+    require 'CONNECTDATABASE.php';
+
+?&gt;
+
+====================================&gt; read file fucntion 
+&lt;?php
+// read file fucntion 
+// if you are used echo , print content with char 
+// you are not print char , use only readfile function not use echo 
+// that is not read png file 
+$file = readfile("data.txt");
+// read html file 
+$file = readfile("data.html");
+// echo $file;
+
+====================================&gt;  fopen() , fread() , filesize() 
+$fptr = fopen('data.txt' ,"r");  // That is return resources and false 
+// echo $fptr;
+// if(!$fptr){
+//     echo "This file not exist";
+// }
+//=================&gt; read content in file 
+$content = fread($fptr , filesize("data.txt"));
+echo $content;
+
+=====================================&gt; fgets() function  
+// fgets() fucntion is use for read one by one line in  file 
+echo fgets($fptr);
+echo fgets($fptr);
+echo fgets($fptr);
+// read all line in file 
+while($s = fgets($fptr)){
+    echo $s;
+}
+
+=====================================&gt; fgetc() function 
+// fgetc() fucntion is use for read character  in  file 
+echo fgetc($fptr);
+// read all character in file 
+while($s = fgetc($fptr)){
+    echo $s;
+}
+
+=====================================&gt; Write in file (fwrite())
+//================&gt; w = That is use for create file if your file is not exist 
+$fptr = fopen('data1.txt', "w");
+// fwrite is use for wirte line by line in file 
+fwrite($fptr , "This is data file \n");
+fwrite($fptr , "This is secon line on file");
+fclose($fptr);
+
+=====================================&gt; append  (fwrite())
+/* a = That is use for append content at last  in file without rmoving existing contente 
+     That is use for create file if your file is not exist */
+$fptr = fopen('data3.txt', "a");
+fwrite($fptr,"\n That is last content2");
+     
+======================================&gt; close file 
+fclose($fptr);
+?&gt;
+
+======================================&gt; cookie 
+&lt;?php
+// Syntax to set cookie
+// "/" mince all website set 
+setcookie("catagory" , "Books" , time() + 86400 , "/");
+echo "The cookie is set &lt;br&gt;";
+// catagory of cookie 
+$cat = $_COOKIE['catagory'];
+echo $cat;
+
+?&gt;
+
+======================================&gt; sessions
+&lt;!-- first file  --&gt;
+&lt;!-- =============&gt;start session  --&gt;
+&lt;?php
+// What is session ? 
+// Used to mangae information across difference pages 
+
+// varify the user login info 
+// start session 
+session_start();
+$_SESSION['username'] = "setu"; 
+$_SESSION['favCat'] = "Books";
+// use of this function Go to onther file 
+header("location: welcome.php");
+echo "We have set your session";
+?&gt;
+
+&lt;!-- second file  --&gt;
+&lt;!-- ==============&gt; get session data  --&gt;
+&lt;?php
+// session get data 
+session_start();
+if(isset($_SESSION['username'])){
+    echo "Wlcome " . $_SESSION['username'] ;
+    echo "&lt;br&gt;Your fav catagory is " . $_SESSION['favCat'];
+    echo "&lt;br&gt;";
+}else{
+    echo "Please Login to continue";
+}
+?&gt;
+
+&lt;!-- thrid file  --&gt;
+&lt;!-- ===============&gt; distroy session  --&gt;
+&lt;?php
+// session logged out 
+// start session 
+session_start();
+// That is use all var is distory 
+session_unset();
+// That is use session destory 
+session_destroy();
+echo "&lt;br&gt; You hava been logged out";
+?&gt;
+
+=======================================&gt; exit 
+&lt;!-- That is exit for out php script  --&gt;
+&lt;?php exit ?&gt;
+
+=======================================&gt; password protected function 
+&lt;?php
+// hear password length is 255
+// hase function is use for convert password in hase type 
+$hase = password_hash($Password,PASSWORD_DEFAULT);
+// password_verify() function is use of check userpassword and hase password match or not 
+password_verify($password, $row['password'])
+?&gt;
+
+========================================&gt; GET AND POST REQUEST 
+=&gt; GET = request work for url 
+=&gt; POST = request work for  DataBase
+= &gt; if you are take post request in form, you are not share that page url and use search bar
+= &gt; if you are take get request in form, you are share that page url
+
+         </code></pre></li>
+            
+       </ol>
+    </div>
+
+
+<script src="/Cheetsheet.js"></script>
+</body>
+</html>

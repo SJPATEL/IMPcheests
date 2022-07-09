@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pythoncheatsheet.css">
+    <link rel="stylesheet" href="prism.css">
+    <script src="prism.js"></script>
+    <title>HTML-CSS Cheatsheet by Setu Patel</title>
+</head>
+<body>
+     
+    <nav class="nav">
+        <img id="logo" src="logo.jpeg" alt="">
+          HTML-CSS cheatsheets by S.J.PATEL
+    </nav>
+
+    <div id="scroll" class="scrollBar">
+        <img id="rmLogo" src="/removelogo.png" alt="Remove Scrollbar img">
+        <ul class="cheets">
+            <li class="cheet1"><a href="pythoncheet.html">PYTHON</a></li>
+            <li class="cheet1"><a href="HTML-CSS.html">HTML-CSS</a></li>
+            <li class="cheet2"><a href="JAVA-SCRIPT.html">JAVA-SCRIPT</a></li>
+            <li class="cheet3"><a href="PHP.html">PHP</a></li>
+            <li class="cheet4"><a href="BOOT-STARPS.html">BOOT-STRAP</a></li>
+        </ul>
+    </div>
+
+    <div class="div">
+        <ol>
+            
+            <li>Html boilarplate<pre class="language-html"><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></li>
+
+
+<li>Html comentline<pre class="language-html"><code>short cut key = ctrl+/
+&lt;!-- u tag is use for underline --&gt;</pre></li>
+
+            <li>Html head tag<pre class="language-html"><code>
+&lt;!-- There are tag is used to hading --&gt;
+&lt;h1&gt;Hello , how are you ?&lt;/h1&gt;
+&lt;h2&gt;Hello , how are you ?&lt;/h2&gt;
+&lt;h3&gt;Hello , how are you ?&lt;/h3&gt;
+&lt;h4&gt;Hello , how are you ?&lt;/h4&gt;
+&lt;h5&gt;Hello , how are you ?&lt;/h5&gt;
+&lt;h6&gt;Hello , how are you ?&lt;/h6&gt;</code></pre></li>
+
+            <li>Html paregraph tag<pre class="language-html"><code>
+&lt;!-- use Enter paregraph --&gt;
+&lt;p&gt;Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet, mollitia maxime adipisci dolores cum minus odit cumque facilis quasi quisquam ut, vitae ad commodi aliquid ratione dolorem illum molestias officiis!&lt;/p&gt;</code></pre></li>
+
+            <li>Html break tag<pre class="language-html"><code>
+&lt;!-- use new line  --&gt;
+&lt;!-- use line break --&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consecte  &lt;br&gt; 
+tur adipisicing elit. Beatae, consequatur!&lt;/p&gt;</code></pre></li>
+
+            <li>Html strong word<pre class="language-html"><code>
+&lt;!-- use bold word --&gt;
+&lt;strong&gt;Hello&lt;/strong&gt;</code></pre></li>
+
+            <li>Html em tag<pre class="language-html"><code>
+&lt;!-- convert word in etalick language --&gt;
+&lt;em&gt;Hy,how are you ?&lt;/em&gt;</code></pre></li>
+
+            <li>Html del tag<pre class="language-html">
+<code>&lt;!-- use line in word  --&gt;
+&lt;del&gt;Hello&lt;/del&gt;</code></pre></li>
+
+            <li>Html sub anb sup tag<pre class="language-html">
+<code>&lt;!-- use sub tab  --&gt;
+&lt;p&gt;h &lt;sub&gt;2&lt;/sub&gt;o&lt;/p&gt;
+&lt;!-- use sup tag  --&gt;
+&lt;p&gt;2 &lt;sup&gt;4&lt;/sup&gt;&lt;/p&gt;</code></pre></li>
+
+            <li>Html ins and u tag<pre class="language-html"><code>&lt;!-- use ins and u tag for underline in the word --&gt;
+&lt;ins&gt;GoodMorning&lt;/ins&gt;
+&lt;u&gt;setu&lt;/u&gt;</code></pre></li>
+
+            <li>Html link add<pre class="language-html"><code>&lt;!-- add link example google.com  --&gt;
+&lt;a href="google.com"&gt;open google&lt;/a&gt;</code></pre></li>
+
+            <li>Html target and ./<pre class="language-html"><code>&lt;!-- target --&gt;
+&lt;!-- opne new tab/page  --&gt;
+target="_blank"
+./=current folder ke under</code></pre></li>
+
+            <li>Html add image<pre class="language-html"><code>&lt;!-- add image  --&gt;
+&lt;img src="image path" alt="topic image"&gt;</code></pre></li>
+
+            <li>Html ol tag<pre class="language-html"><code>&lt;!-- oder list  --&gt;
+&lt;ol type="1"&gt;
+    &lt;li&gt;setu&lt;/li&gt;
+    &lt;li&gt;patel&lt;/li&gt;
+&lt;/ol&gt;
+out put 
+1. setu
+2. patel</code></pre></li>
+
+            <li>Html ul tag<pre class="language-html"><code>&lt;!-- unorder list  --&gt;
+&lt;ul &gt;
+    &lt;li&gt;yash&lt;/li&gt;
+    &lt;li&gt;tanavir&lt;/li&gt;
+&lt;/ul&gt;
+out put
+.yash
+.tanavir</code></pre></li>
+
+            <li>Html create table <pre class="language-html"><code>&lt;!-- create table  --&gt;
+&lt;table border=10&gt;
+    &lt;thead&gt;
+        &lt;th&gt;name&lt;/th&gt;
+        &lt;th&gt;contect no.&lt;/th&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;raj&lt;/td&gt;
+            &lt;td&gt;88888888&lt;/td&gt;
+        &lt;/tr&gt;
+
+        &lt;tr&gt;
+            &lt;td&gt;yash&lt;/td&gt;
+            &lt;td&gt;88888888&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre></li>
+
+            <li>Html create form<pre class="language-html"><code>&lt;!-- create form  --&gt;
+&lt;form action=""&gt;
+    &lt;label for="name"&gt;name&lt;/label&gt;
+    &lt;input type="text" name="name" id="name"  maxlength='11'  placeholder="Enter your name" required&gt;
+
+    &lt;label for="name"&gt;Email&lt;/label&gt;
+    &lt;input type="Email" name="Email" id="Email" placeholder="Enter your Email" required&gt;
+&lt;/form&gt;</code></pre></li>
+
+            <li>Html create button<pre class="language-html"><code>&lt;!-- create submit button  --&gt;
+&lt;input type="submit" value=""&gt;
+&lt;input type="button" value=""&gt;</code></pre></li>
+
+            <li>Html radio button<pre class="language-html"><code>&lt;!-- radio button --&gt;
+&lt;input type="radio" name="Name" id="Name"&gt; &lt;br&gt;</code></pre></li>
+
+            <li>Html option value<pre class="language-html"><code>&lt;!-- crate option value  --&gt;
+&lt;select name="Name" id="Name"&gt;
+    &lt;option value="Ram"&gt;1111&lt;/option&gt;
+    &lt;option value="Ram"&gt;1111&lt;/option&gt;
+    &lt;option value="Ram"&gt;1111&lt;/option&gt;
+    &lt;option value="Ram"&gt;1111&lt;/option&gt;
+&lt;/select&gt;</code></pre></li>
+
+            <li>Html textarea<pre class="language-html"><code>&lt;!-- create textarea --&gt;
+ &lt;textarea name="" id="" cols="30" rows="10"&gt;&lt;/textarea&gt;</code></pre></li>
+
+            <li>Html entities symoble<pre class="language-html"><code>&lt;!-- entities for html  --&gt;
+&lt;p&gt; &copy; &lt;/p&gt;   =copyright symbole
+&lt;p&gt; &it; &lt;/p&gt;     = &lt;
+&lt;p&gt; &gt; &lt;/p&gt;     = &gt;
+&lt;p&gt; &amp; &lt;/p&gt;    = &
+&lt;p&gt; &#8377; &lt;/p&gt;  =rupise simbole
+&lt;p&gt; &nbsp;  &lt;/p&gt;  =_____
+&lt;p&gt; &quot;  &lt;/p&gt;  ="
+&lt;p&gt; &apos;  &lt;/p&gt;  = '</code></pre></li>
+
+           <li>HTML Audio Tag<pre class="language-html"><code>&lt;audio src=""&gt;&lt;/audio&gt;</code></pre></li>
+
+            <li>css padding and margin<pre class="language-css"><code>/* css  */
+/* css starting  */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* css style  */
+/* padding  */
+*{
+    padding:10px;         
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 20px ;
+    padding: 10px 20px 30px 40px;
+}
+/* margin */
+*{
+    margin:10px;         
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px ;
+    margin: 10px 20px 30px 40px;
+}
+
+/* css style  */
+*{
+    width: 10rm;
+    height: 10px;
+    width: 10vw;
+    height: 100vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: italic;
+    list-style: none;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1rem;
+    font-size: 1rem;
+    word-spacing: 1rem;
+    line-hight:10px;
+}</code></pre></li>
+
+            <li>css pesudo class<pre class="language-css"><code>/* pseudo class  */
+a:link   { }          /*   color  */   
+a:visited { }       /*   viste link after change color  */
+a:hover   { }       /*  mouse arrow conver hand arrow  */
+a:active  { }        /*  puse link that time chang link color   */
+
+/* vo child  jo pairant  ka first child */
+p:first-child { } 
+/* vo p jo pairant  ka first p  */
+p:first-of-type { }
+/* vo child  jo pairant  ka last child */
+p:last-child  { }
+/* vo p jo pairant  ka last p  */
+p:last-of-type  { }
+/* vo child jo parint ka even child ho  */
+p:nth-child(2n) { }
+/* vo child jo parint ka odd child ho  */
+p:nth-child(2n+1)  { }
+/* vo p jo parint ka even p ho  */
+P:nth-of-type(2n) { }
+/* vo p jo parint ka odd p ho  */
+P:nth-of-type(2n+1) { }
+/* jishaka class fanshi ho vo part ke alava sub part  */
+body :not(.fancy) { }
+/* all html select  */
+:root { }
+html { }
+* { }
+/* first-letter */
+p::first-letter{ }</code></pre></li>
+
+            <li>css clear float<pre class="language-css"><code>/* clear float  */
+_____::after{
+    content: "";
+    display: block;
+    clear: both;
+}</code></pre></li>
+
+            <li>css positon relative and absolute<pre class="language-css"><code>/* position  */
+_{
+    /* position thi 150 px top  */
+    position: relative;
+    top: 150px;
+    /* documetn se bahar  */
+    position: absolute;
+    /* position fixed for top*/
+    position:fixed;
+    top: 92%;
+    /* position fixed for bottom */
+    position: fixed;
+    bottom: 0px;
+    /*position fixed that place */
+    position:sticky;
+}</code></pre></li>
+
+            <li>css z-index<pre class="language-css"><code>/* use of z-index is sensitivit  */
+_{
+    z-index: 0;
+    z-index: 1;
+}</code></pre></li>
+
+            <li>css transform tarnslate<pre class="language-css"><code>/* use of transform moveing element  */
+_{
+/* center elemnt */
+    transform: translate(-50%,-50%);
+/* Rotet for round 360deg ex watch  */
+    transform: rotate(360deg);
+/* Element Move for x and Y diraction */
+    transform: translatex(-500vw);
+    transform: translateY(-500vw);
+    transform-origin: bottom;
+}</code></pre></li>
+
+            <li>css set background imag<pre class="language-css"><code>/* set backgroun image  */
+_{   
+    height: 50vh;
+    background: linear-gradient(rgb(0,0,0,0.5) rgb(0,0,0,0.5)),url("path of image");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.background-img{
+    height: 10vh;
+    width: 800vw;
+    background-image: url(Track2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-repeat: repeat-x;
+    background-size: 100%;
+    background-size:  9vw 17vh;
+    position: absolute;
+    top: 94vh;  
+/* That is use for element is light down */
+    opacity: 0.9;
+}</code></pre></li>
+
+            <li>css flex box<pre class="language-css"><code>/* flex box  */
+__{
+    display: flex;
+    flex-direction: row;
+    flex-direction: row-reverse;
+    flex-direction: column;
+    flex-direction: column-reverse;
+    /* remove fix widht  */
+    flex-flow: column wrap;
+    flex-flow: wrap;
+    flex-flow: wrap-reverse;
+}</code></pre></li>
+
+            <li>css justify-content<pre class="language-css"><code>/* justify-content  */
+__{
+    /* all item left side move */
+    justify-content: flex-start;
+    /* all item right side move */
+    justify-content: flex-end;
+    /* all item center side move */
+    justify-content: center;
+    /* space btween for items  but not corner space */
+    justify-content: space-between;
+    /* space around items  */
+    justify-content: space-around;
+    /* space sam  */
+    justify-content: space-evenly;
+}</code></pre></li>
+
+            <li>css align-items<pre class="language-css"><code>/* align - items  */
+__{
+    /* all items move top */
+    align-items: flex-start;
+    /* all items move bottum */
+    align-items: flex-end;
+    /* all items move center */
+    align-items: center;
+    /* all items move top sam widht */
+    align-content: flex-start;
+    /* all items move bottum sam widht */
+    align-content: flex-end;
+    /* all items move center sam widht */
+    align-content: center;
+    align-content: space-between;
+    align-content: space-between;
+}</code></pre></li>
+
+            <li>css align-self<pre class="language-css"><code>/* align self items  */
+/* hear total 3 box and word only one box */
+.box2{
+    /* only box2 is top  */
+    align-self: flex-start;
+    /* only box2 is bottum  */
+    align-self: flex-end;
+    
+    align-self: stretch;
+    order: 2;
+    order: 1;
+    order: 3;
+    
+    flex-basis: 500px;
+}</code></pre></li>
+
+            <li>css animation properti<pre class="language-css"><code>.setAnimation{
+    animation: wheelRotaion linear .3s infinite;
+}
+.box{
+    border: 2px solid red;
+    background: red;
+    animation-name: chang-bg-color;
+    animation-direction: 3s;
+    animation-delay:3s ;
+    animation-iteration-count: 4;
+    animation-fill-mode: forwards;
+}
+@keyframes chang-bg-color{
+    form{
+        background: red;
+    }
+    to{
+        background-color: yellow;
+    }
+}</code></pre></li>
+
+            <li>css animation for round<pre class="language-css"><code>
+.box{
+    background-color: red;
+    height: 40px;
+    width: 30%;
+    animation-name: move-rectangel;
+    position: relative;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    /* animation: movearoun 5s forwards; */
+    inherits: ease-in;
+}
+@keyframes move-rectangel{
+0%{
+    top: 0; 
+    left: 0;
+    background-color: yellow;
+}
+25%{
+    top: 200px;
+    left: 0px;
+    background-color: orange;
+}
+50%{
+    top:200px;
+    left: 200px;
+    background-color: salmon;
+}
+75%{
+    top: 0px;
+    left: 200px;
+    background-color: palegreen;
+}
+100%{
+    top: 0px;
+    left: 0px;
+    background-color: blue;
+}
+    }</code></pre></li>
+
+            <li>css rotate<pre class="language-css"><code>/*rotate box*/ 
+.box:hover{
+    background: chocolate;
+    transform: rotate(360deg);
+    transform: scaley(2);
+    transform: translatey(100px);
+    transform: skew(80deg);
+    
+}</code></pre></li>
+
+            <li>css midiya qure<pre class="language-css"><code>media (max-width:1115px) {
+    .div ol li{
+        width: 80vw;
+    } 
+}
+@media (min-width:501px) and (max-width: 760px){
+}</code></pre></li>
+
+            <li>css box sedow<pre class="language-css"><code>*{
+    box-shadow: 10% 10%;
+}</code></pre></li>
+
+            <li>css grid Property<pre class="language-css"><code>.container{
+/* That minse give 10vw width for 3 element in row diraction */
+   grid-template-rows: repeat(3,10vw);
+/* That minse give 10vw width for 3 element in colume diraction */
+    grid-template-columns: repeat(3,10vw);
+}</code></pre></li>
+
+            <li>css cursor property<pre class="language-css"><code>cursor:  pointer;</code></pre></li>
+
+            <li>CSS Remove Scrollbar<pre class="language-css"><code>body{
+overflow: hidden;
+}</code></pre></li>
+
+            <li>CSS Visibility<pre class="language-css"><code>/* Thta is use for elment unshow  */
+ visibility: hidden;</code></pre></li>
+
+            <li>CSS<pre class="language-css"><code></code></pre></li>
+
+            <li>CSS<pre class="language-css"><code></code></pre></li>
+
+            <li>CSS<pre class="language-css"><code></code></pre></li>
+
+
+        </ol>
+    </div>
+<script src="/Cheetsheet.js"></script>
+</body>
+</html>

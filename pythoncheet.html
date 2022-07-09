@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pythoncheatsheet.css">
+    <link rel="stylesheet" href="prism.css">
+    <script src="prism.js"></script>
+    <title>Python Cheatsheet by Setu Patel</title>
+</head>
+<body>
+     
+    <nav class="nav">
+        <img id="logo" src="logo.jpeg" alt="">
+          Python cheatsheets by S.J.PATEL
+    </nav>
+
+    <div id="scroll" class="scrollBar">
+        <img id="rmLogo" src="/removelogo.png" alt="Remove Scrollbar img">
+        <ul class="cheets">
+            <li class="cheet1"><a href="/">PYTHON</a></li>
+            <li class="cheet1"><a href="HTML-CSS.html">HTML-CSS</a></li>
+            <li class="cheet2"><a href="JAVA-SCRIPT.html">JAVA-SCRIPT</a></li>
+            <li class="cheet3"><a href="PHP.html">PHP</a></li>
+            <li class="cheet4"><a href="BOOT-STARPS.html">BOOT-STRAP</a></li>
+        </ul>
+    </div>
+
+    <div class="div">
+        <ol>
+            <li>python fuction <pre class="language-python"><code># function python 
+1 lower function ----
+# => use convert lower char
+char="CODER"
+print(char.lower())
+
+2 upper function ----
+# => use convert upper char
+char="Coder"
+print(char.upper()) 
+
+3 length function ---- 
+# => use of find the length of word
+char='coder'
+print(len(char))
+
+4 title function ----
+# convert first letter capital in word 
+char='coder is hard work many'
+print(char.title())
+
+5 count function ----
+# coutn letter 
+char='coder is hard work many'
+print(char.count("a"))
+# out put 
+# 2
+
+ 6 strip function ----
+# remove first space in sentance 
+char='   coder is hard work many'
+print(char.strip())
+# out put 
+# coder is hard work many 
+
+7 replace()
+#  use of convert to other letter ,space,word
+char='hello how are you ?'
+print(char.replace("h","m")) 
+# out put
+# mello mow are you ?
+
+8 find()
+#  use of coutn char position 
+char='hello how are you ?'
+print(char.find("o"))  
+# out put 
+# 4
+
+9 center()
+#  use of add charter before and after the word
+char = 'hello'
+print(char.center(10,"*"))
+# out put 
+# **hello***
+
+10 append()
+#  use of add membet in list for last
+list=['mango','bannana']
+list.append("apple")
+print(list)
+# out put 
+['mango', 'bannana', 'apple']
+
+11 extend ()
+#  use of add to only list member in other list 
+list=['mango','bannana']
+list1=['apple']
+list.extend(list1)
+print(list)
+# out put 
+['mango', 'bannana', 'apple']
+
+12 insert()
+#  use of add to one member any position in list
+# starting count 0 
+l1=['mango', 'bannana', 'apple']
+l1.insert(1,'orenge')
+print(l1)
+# out put 
+['mango', 'orenge', 'bannana', 'apple']
+
+13 del()
+#  use of  delete one member any position 
+
+14 remove()
+#  use of remove aney member in list
+l1=['mango', 'bannana', 'apple']
+l1.remove("apple")
+print(l1)
+# out put 
+['mango', 'bannana']
+
+15 sort()
+#  use of cange member  in aplphabets in line and list
+list2=['mango', 'bannana']
+list2.sort()
+print(list2)
+# out put 
+['bannana', 'mango']
+
+16 clear()
+#  use of clear all member in list
+list=['bannana', 'mango']
+list.clear()
+print(list)
+# out put 
+[]
+
+17 copy()
+# use of copy to word ,line ,list etc..
+
+
+18 type()
+# use of show list type 
+list_type={'mohan','raju','mahesh'}
+print(type(list_type))
+# out put 
+# <class 'set'>
+
+19 pop()
+# use of delate last member in set 
+list_type={'mahesh','raju','manav'} 
+list_type.pop()
+print(list_type)
+# out put 
+{'mahesh', 'raju'}
+
+20 index()
+# use of location position any member in list
+list_type=['mahesh','raju','manav']
+print(list_type.index('raju'))
+# out put 
+1
+
+21 min()
+# use of find minmum value 
+l1=[10,30,50,10]
+print(min(l1))
+# out put 
+10
+22 max()
+# use of find maximum value 
+l1=[10,30,50,10]
+print(max(l1))
+# out put 
+15</code></pre></li>
+
+            <li>python os module<pre class="language-python"><code>from genericpath import exists
+import os 
+#Enter paht
+os.getcwd('path')
+# create folder 
+os.mkdir('folder name')
+# currunt location 
+os.getcwd()
+# exist or not exist folder 
+os.path.exists('folder name')
+# remove folder
+os.rmdir('folder name')
+# List file and floder 
+os.listdir()
+# create folder in folder 
+os.mkdir(exists folder/new folder)
+# move folder in folder 
+os.move('new folder','folder/new_folder') 
+# splint text 
+ext=os.path.splitext(file)[1].lower()</code></pre></li>
+
+        <li>python datetime moule<pre class="language-python">
+<code>
+import datetime
+hour=int(datetime.datetime.now().hour)
+print(hour)
+str_time=datetime.datetime.now().strftime("%H:%M:%S")
+print(str_time)</code></pre></li>
+
+        <li>python pyttsx3<pre class="language-python"><code>import pyttsx3
+# use get voice systems
+engine=pyttsx3.init('sapi5') #sapi5=get voice system
+voices = engine.getProperty('voices')
+print(voices[0].id)
+engine.setProperty('voice',voices[0].id)
+
+def speck(audio):
+    engine.say(audio)
+    engine.runAndWait()</code></pre></li>
+
+        <li>python speech_recognition module<pre class="language-python"><code>r=sr.Recognizer()
+with sr.Microphone() as source:
+    print("listninig...")
+    # r.pause_threshold = 1
+    audio = r.listen(source)   
+try:
+    print("Recogninzing....")
+    qurey = r.recognize_google(audio)
+    print(f"user said : {qurey}\n")
+except Exception as e:
+    print(e)
+    print("say that agein please...")
+    return "none"</code></pre></li>
+
+        <li>python wikipedia module<pre class="language-python"><code>import wikipedia
+# use sherch Warning any porsone 
+if 'wikipedia' in qurey:
+    speck('searching Wikipidia.....')
+    qurey=qurey.replace("wikipedia","")
+    results=wikipedia.summary(qurey,sentences=2)
+    speck("According to wikipedia")
+    print(results)
+    speck(results)</code></pre></li>
+
+        <li>python webbrowser module<pre class="language-python"><code>import webbrowser
+# use search any website in chrome 
+elif 'open youtube' in qurey:    
+    webbrowser.open("youtube.com")
+elif 'open google' in qurey:
+    webbrowser.open("google.com")</code></pre></li>
+
+        <li>python smtplib python<pre class="language-python"><code>import smtplib
+# use worke in send Email
+def sendEmail(to,content):
+    server=smtplib.SMTP("smtp.gmail.com",587)
+    server.ehlo()
+    server.starttls()
+    server.login('your Email_id ','possword')
+    server.sendmail('your Email_id',to,content)
+    server.close()
+
+    elif 'send email to patel' in qurey:
+    try:
+        speck('What should i say')
+        content=takeCommand()
+        to='Your_email.com'
+        sendEmail(to,content)
+        speck("Email has been send")
+    except Exception as e:
+        print(e)
+        speck("sorry setu patel,i am not send your Email")</code></pre></li>
+
+        <li>python play song join()<pre class="language-python"><code>#joine fuction
+# play musice 
+mus_dir='B:\\youtub\\adio\\music'
+    song=os.listdir(mus_dir)
+    print(song)
+    os.startfile(os.path.join(mus_dir,song[0]))
+        </code></pre></li>
+        <li>python find zero<pre class="language-python"><code># find zero in factorial
+def find_Zero(number):
+    coutn=0
+    i=5
+    while (number/i!=0):
+        coutn += int(number/i)
+        i = i*5
+    return coutn
+
+no=int(input('Enter the number for factorial :'))
+zero=find_Zero(no)
+print(zero)</code></pre></li>
+         
+        <li>python keyword(dictionary)<pre class="language-python"><code>user_info = {
+    'name' : 'setu',
+    'age'  : 18,
+    'fav_movies' : ['dhoom','dhoom3'],
+    'fav_game' : ['PUBG','freefire']
+}
+if 'name' in user_info:
+if 'setu' in user_info.values():
+for key,value in user_info.items():
+    print(f'key is {key} and value is {value}')</code></pre></li>
+
+        <li>python formkeys<pre class="language-python"><code>d=dict.fromkeys(['name','age'],'unknwon')
+print(d)
+# out put 
+{'name': 'unknwon', 'age': 'unknwon'}</code></pre></li>
+
+        <li>python set datatype<pre class="language-python"><code># unordered collection of unice items 
+# unordered collection => not poistion 
+# not stor list dict
+# set() 
+s=(1,2,3,4,5)
+l={1,2,3,4,5,5,5,4,4}
+s2=list(set(l))
+print(s2)
+# out put 
+[1, 2, 3, 4, 5]</code></pre></li>
+
+        <li>python list,comprehension<pre class="language-python"><code>#list
+l1=[1,2,3,4]
+#list comprehension 
+squres=[(i**2) for i in range(1,10)]
+nagetive_value=[-i for i in range(1,11)]
+
+num=[1,2,3]
+new_list=[i*2 if(i%2==0) else -i for i in num]
+
+names=['setu','yesh','raj']
+frist_char=[name[0] for name in names]
+print(frist_char)
+# out put 
+['s', 'y', 'r']</code></pre></li>
+
+        <li>python dict comprehension<pre class="language-python"><code>squre={i:i*2 for i in range(10)}
+print(squre)
+string='setu patel'
+coutn_char={char:string.count(char) for char in string}
+print(coutn_char)
+#out put
+{0: 0, 1: 2, 2: 4, 3: 6, 4: 8, 5: 10, 6: 12, 7: 14, 8: 16, 9: 18}
+{'s': 1, 'e': 2, 't': 2, 'u': 1, ' ': 1, 'p': 1, 'a': 1, 'l': 1}</code></pre></li>
+
+        <li>python *args<pre class="language-python"><code>def mul_nums(*args):
+mul=1
+for i in args:
+    mul = mul * i
+return mul
+print(mul_nums(1,2,3))
+
+def func(*args):
+    print('name is ',  args[0] ," age is " , args[1] , "rollno is " ,args[2])
+
+items=('setu',15,18)
+func(*items)
+# out put 
+6
+name is  setu  age is  15 rollno is  18</code></pre></li>
+
+        <li>python **kwargs<pre class="language-python"><code># **kwargs as parameter 
+# retrun out put dictionry 
+def kwa(**kwrags):
+    for key,value in kwrags.items():
+        print(f"{key} : {value}")
+d={'name':'setu','age':18}
+print(kwa(**d))
+#out put 
+name : setu
+age : 18
+None</code></pre></li>
+
+        <li>python lambda<pre class="language-python"><code>sum=lambda a,b:a+b 
+iseven=lambda a:a%2==0
+print(sum(4,5))
+print(iseven(7))
+# out put  
+9
+False</code></pre></li>
+
+        <li>python enumerate <pre class="language-python"><code>#show position 
+names=['abc','abcd','abcde']
+for pos , name in enumerate(names):
+    print(f"{pos}-------->{names}")
+#out put 
+0-------->['abc', 'abcd', 'abcde']
+1-------->['abc', 'abcd', 'abcde']
+2-------->['abc', 'abcd', 'abcde']</code></pre></li>
+
+        <li>python mapfunction<pre class="language-python"><code>numbers=[1,2,3,4]
+def square(a):
+    return a**2
+squares=list(map(square,numbers))
+print(squares)
+# out put 
+[1, 4, 9, 16]</code></pre></li>
+
+        <li>python zipfuction<pre class="language-python"><code># use of combain list 
+user_id=[1,2,3]
+user_name=['setu','yash','harry']
+combain_list = list(zip(user_id,user_name))
+print(combain_list)
+# out put 
+[(1, 'setu'), (2, 'yash'), (3, 'harry')]</code></pre></li>
+
+        <li>python any,all fuction<pre class="language-python"><code># all
+# all is used to all member is True 
+number=[1,2,3,4,5,6]
+print(all([num%2==0 for num in number]))
+
+# any 
+# only one,two,more membar are True 
+print(any([num%2==0 for num in number]))
+# out put 
+False
+True</code></pre></li>
+
+        <li>python decorator<pre class="language-python"><code># use of decorator extra comment line print many function 
+from functools import wraps
+def print_fuction_data(fuction):
+    @wraps(fuction)
+    def wrapper(*args,**kwargs):
+        print(f"you are colling fuction is { fuction.__name__} ")
+        print(f"{fuction.__doc__}")
+        return fuction(*args,**kwargs)
+    return wrapper
+
+@ print_fuction_data
+def add(a,b):
+    return a+b
+print(add(2,5))
+# out put 
+you are colling fuction is add
+None
+7</code></pre></li>
+
+        <li>python generators<pre class="language-python"><code># use of demand argument print when next demand argument pritn bfore argument delete in memory 
+def num(n):
+    yield(n)
+number=num(10)
+print(number)
+for nums in number: #not again this fucntion is print
+    print(nums)
+#out put 
+&lt;generator object num at 0x0000019950C9BB30&gt;
+10
+
+#generators comprehension
+squre=(i**2 for i in range(1,10))
+for num in squre: #not print againe this function
+    print(num)</code></pre></li>
+
+        <li>python class<pre class="language-python"><code> class Person:
+    def __init__(self,fist_name,last_name,age):
+        self.fist_name = fist_name,
+        self.last_name = last_name,
+        self.age = age 
+    
+P1=Person('setu','patel',18)
+print(P1.last_name)
+print(P1.age)
+
+# inheritance classes 
+class Phone:
+    def __init__(self,brand,model_name,price):
+        self.brand = brand,
+        self.model_name= model_name,
+        self.price = price
+
+    def full_name(self):
+        return f"{self.brand} {self.model_name}"
+
+class SmartPhone(Phone):
+    def __init__(self, brand, model_name, price,ram,storage):
+        super().__init__(brand,model_name,price)
+        self.ram = ram 
+        self.storage= storage 
+P1=Phone('Nokia','1100',100)
+print(P1.full_name())
+P2=SmartPhone('oppo','oppo 31',16000,'6 GB','164 GB')
+print(P2.full_name())
+# out put 
+('patel',)
+18
+('Nokia',) ('1100',)
+('oppo',) ('oppo 31',)
+
+#chack for object 
+print(isinstance(p1,phone)
+#chack inheritance for other class
+print(issubclass(class1,calss2)</code></pre></li>
+
+        <li>python exception handling<pre class="language-python"><code> while True:
+    try:
+        number=int(input("enter the one number"))
+    except ValueError:
+        print("please enter the int value")
+    except:
+        print('other error')
+    else:
+        print(f'your number is {number}')
+    finally:
+        print("Thanks for use this program")
+# out put 
+enter the one number 5
+your number is 5
+Thanks for use this program</code></pre></li>
+
+        <li>python debug<pre class="language-python"><code>#  Debug 
+import pdb
+pdb.set_trace()
+name=input("Enter the your name ")
+age =input("Enter the your age")
+age=age+5
+print(f"your age is {age}")
+
+# key prass in terminator 
+l=show list line 
+n=run line 
+q = quit 
+
+# out put 
+$ python in.py 
+> c:\all coding\pythonproject\python cheetsheet\in.py(4)<module>()
+-> name=input("Enter the your name ")
+(Pdb) l
+  1     #  Debug
+  2     import pdb
+  3     pdb.set_trace()
+  4  -> name=input("Enter the your name ")
+  5     age =input("Enter the your age")  
+  6     age=age+5
+  7     print(f"your age is {age}")       
+  8    
+(Pdb) n   
+Enter the your name setu
+> c:\all coding\pythonproject\python cheetsheet\in.py(5)<module>()
+-> age =input("Enter the your age")
+(Pdb) n
+Enter the your age18
+> c:\all coding\pythonproject\python cheetsheet\in.py(6)<module>()
+-> age=age+5
+(Pdb) l
+  1     #  Debug
+  2     import pdb
+  3     pdb.set_trace()
+  4     name=input("Enter the your name ")
+  5     age =input("Enter the your age")
+  6  -> age=age+5
+  7     print(f"your age is {age}")
+  8
+  9     # key prass in terminator
+ 10     # l=show list line
+ 11     # n=run line
+(Pdb) n
+TypeError: can only concatenate str (not "int") to str
+> c:\all coding\pythonproject\python cheetsheet\in.py(6)<module>()
+-> age=age+5
+(Pdb) q</code></pre></li>
+
+        <li>python read file <pre class="language-python"><code># Red file 
+#open file 
+f=open('filename')
+
+#read file 
+print(f.read())
+
+#close file 
+f.close()
+
+#corser position
+f.tell()
+
+#corser position change
+f.seek()
+
+#read line only one 
+f.readline()
+
+#read lines all line 
+f.readlines()
+
+#remove space between line 
+end=""
+
+#show file name 
+f.name
+
+##### open file 
+with open('file.txt') as f:
+    data=f.read()
+    print(data)
+#open file other folder 
+f=open(r"other folder file path Enter")
+print(f.read())</code></pre></li>
+
+        <li>python Write file <pre class="language-python"><code># Write file 
+# w=old data delete in file and new data Enter and create new file 
+with open("file.txt",'w') as f:
+    f.write('hello')
+# a= old data not delete and new data enter and create new file
+with open("file.txt",'a') as f:
+    f.write('hello')
+# rt=not crate new file only use old(exist) file 
+with open("file.txt",'rt') as f:
+    f.seek(len(f.read())) #courser position change for lase position
+    f.write('hello freindes')
+
+## read data one file and write to other file
+with open('file.txt','r' ) as fr:
+    with open('file1.txt','w') as fw:
+        fw.write(fr.read())</code></pre></li>
+
+        <li>python split()<pre class="language-python"><code>#split
+line=line.split("\t")</code></pre></li>
+
+        <li>python tk-inter library<pre class="language-python"><code># structure tkinter 
+from tkinter import *
+from tkinter.ttk import *
+import tkinter as tk
+
+win=Tk()
+win.title("Tk inter")
+win.geometry('250x250')  # setu window size 
+win.config(bg='red')
+
+win.mainloop()</code></pre></li>
+
+        <li>python label and Entery box<pre class="language-python"><code># label 
+labe_name=tk.label(win,text='enter the message')
+labe_name.grid(row= , column=sticky)
+# sticky= start thi start
+
+##Entery box
+name_var=StringVar() / IntVar()
+entry-name=tk.Entry(win,width=16,bg='red',fg='white',textvariable=name_var)
+entry-name.grid(row=0,column=1)</code></pre></li>
+
+        <li>python tkinter combobox<pre class="language-python"><code>from tkinter.ttk import Combobox
+# combo box
+gender_var=StringVar
+combo_name=Combobox(win,width=6,height=10,textvariable=gender_var,state='readonly')
+#entery value in combobox
+combo_name['value']=('value1','value2')
+# first value combobox 
+combo_name.current(0) 
+combo_name.grid(row=0,column=1)</code></pre></li>
+
+        <li>python tkinter radio_botton<pre class="language-python"><code># radio botton 
+botton1_var=tk.StringVar()
+radio_botton=tk.Radiobutton(win,text='radio botton',value='student',
+textvariable=botton1_var)
+radio_botton.grid(row=1,column=2)</code></pre></li>
+
+        <li>python tkinter check_botton<pre class="language-python"><code>#check botton
+chack_var=StringVar()
+check_botton=tk.Checkbutton(win,text='',textvariable=chack_var)
+check_botton.grid(row=1,column=2)</code></pre></li>
+
+        <li>python tkinter submit_botton<pre class="language-python"><code>#submit botton
+def action():
+    pass
+submit_botton=tk.Button(win,text='submit botton',command=action)
+submit_botton.pack()
+
+# after submit clear data in box 
+entry_box.delete(0,tk.END)</code></pre></li>
+
+        <li>python tkinter config and configure<pre class="language-python"><code>#configur 
+name-label.configure(foregroun='#b388ff')</code></pre></li>
+
+        <li>python tkinter label_frame<pre class="language-python"><code>#lable frame 
+label_frame=tk.LabelFrame(win,text='')
+label_frame.pack()</code></pre></li>
+
+        <li>python tkinter Notebookpage<pre class="language-python"><code>import tkinter.ttk as tk 
+nb=tk.Notebook(win)
+page1=tk.Frame(nb)
+page2=tk.Frame(nb)
+nb.add(page1,text='one')
+nb.add(page2,text='two')
+nb.pack(expand=True,fill='both')</code></pre></li>
+
+        <li>python tkinter messagebox<pre class="language-python"><code>from tkinter import  messagebox as m_box
+m_box.showinfo('title','messese')
+m_box.showerror('title','messese')
+m_box.showwarning('title','messese')
+m_box.askquestion('title','messese')</code></pre></li>
+
+        <li>python tkinte frame<pre class="language-python"><code>frame=tk.Frame(win,width=10,height=50)
+frame.pack()</code></pre></li>
+
+        <li>python tkinte distroy and canvas<pre class="language-python"><code># win distroy 
+command=win.destroy
+#canvase
+w=Canvas(win,width=20,height=20)</code></pre></li>
+
+        <li>python tkinter list box<pre class="language-python"><code># list box 
+lb=tk.Listbox(win)
+lb.insert(1,'python')
+lb.insert(2,'Java')
+lb.pack()</code></pre></li>
+
+        <li>python tkinter menu<pre class="language-python"><code>menu=Menu(win)
+win.config(menu=menu)
+filemenu=Menu(menu,tearoff=0) #tearoff = use remove line in file menu
+menu.add_cascade(label='File',menu=filemenu)
+filemenu.add_command(label='new')
+filemenu.add_separator() #use new line add in file menu
+#last add
+win.config(menu=mani_menu)</code></pre></li>
+
+        <li>python tkinter message<pre class="language-python"><code>massge=tk.Message(win,text="hello how are you ?")
+massge.config(bg='light green')
+massge.pack()</code></pre></li>
+
+        <li>python tkinter scale<pre class="language-python"><code># scale varticall
+w=tk.Scale(win,from_=1,to=100)
+w.pack()
+# scale horizontel
+w=tk.Scale(win,from_=1,to=200,orient=HORIZONTAL)
+w.pack()</code></pre></li>
+
+        <li>python thinter scrollbar<pre class="language-python"><code># scrollbar 
+scrollbar=tk.Scrollbar(win)
+scrollbar.pack(side=RIGHT,fill=Y)
+# set scrollbar for listbox
+listbox=Listbox(win,yscrollcommand=scrollbar.set)
+# tuch scrollbar for listbox
+scrollbar.config(command=listbox.yview)</code></pre></li>
+
+        <li>python tkinter textbox<pre class="language-python"><code># text box 
+T=tk.Text(win,height=3,width=30)
+T.pack()
+T.insert(END,'setu\patel')</code></pre></li>
+
+        <li>python tkinter Toplevel<pre class="language-python"><code># Toplevel  use of tow windwos
+
+win=Tk()
+win.title("kk")
+top=Toplevel(win)
+top.title("setu")</code></pre></li>
+
+        <li>python tkinter spinbox<pre class="language-python"><code># Spinbox
+w=Spinbox(win,from_=0,to=100)
+w.pack()</code></pre></li>
+
+        <li>python tkinter add imag<pre class="language-python"><code># imag add 
+photo=tk.PhotoImage(file=r'C:\\Users\\acer\\Pictures\Saved Pictures\\Instagram\\img.png')
+img=photo.subsample(2,2)
+Button(win,text='seinin',image=photo,compound=LEFT).pack(side=TOP)</code></pre></li>
+
+        <li>python progrresbar<pre class="language-python"><code>from tkinter import *
+from tkinter.ttk import *
+win=Tk()
+win.title('Progrees bar')
+
+progrres=Progressbar(win,orient=HORIZONTAL,length=100,mode='indeterminate')
+def bar():
+        import time
+        progrres['value'] = 10
+        win.update_idletasks()
+        time.sleep(0.3)
+        progrres['value'] = 20
+        win.update_idletasks()
+        time.sleep(0.3)
+        progrres['value'] = 40
+        win.update_idletasks()
+        time.sleep(0.3)
+        progrres['value'] = 60
+        win.update_idletasks()
+        time.sleep(0.3)
+        progrres['value'] = 80
+        win.update_idletasks()
+        time.sleep(1)
+        progrres['value'] = 100
+        win.update_idletasks()
+        time.sleep(1)
+        progrres['value'] = 80
+        win.update_idletasks()
+        time.sleep(0.3)
+        progrres['value'] = 60
+        win.update_idletasks()
+        time.sleep(0.3)
+        progrres['value'] = 40
+        win.update_idletasks()
+        time.sleep(0.3)
+        progrres['value'] = 20
+        win.update_idletasks()
+        time.sleep(0.3)
+        progrres['value'] = 0
+        
+progrres.pack(padx=10)
+Button(win,text='start',command=bar).pack()
+win.mainloop()</code></pre></li>
+win.mainloop()</code></pre></li>
+
+        <li>python tkinter coloreshooser<pre class="language-python"><code># set bakground color for you choose color in colorform
+from tkinter import colorchooser
+
+color = colorchooser.askcolor(title='') 
+print(color[1])
+win.configure(background=color[1])</code></pre></li>
+
+        <li>python plyer module<pre class="language-python"><code>#use notification
+from plyer import notification   #pip install plyer</code></pre></li>
+
+        <li>python string and rendom module<pre class="language-python"><code>import string
+if __name__ == '__main__':
+        s1=string.ascii_letters
+        # print(s)
+        s2=string.ascii_uppercase
+        # print(s)
+        s3=string.digits
+        # print(s)
+        s4=string.punctuation
+        # print(s)
+        p_len=int(input("Enter length your possword: "))
+        s=[]
+        s.extend(list(s1))
+        s.extend(list(s2))
+        s.extend(list(s3))
+        s.extend(list(s4))
+        # print(s)
+        p="".join(random.sample(s,p_len))
+        print('Your possword is : ')
+        print(p)</code></pre></li>
+
+        <li>python jointe file<pre class="language-python"><code># contect to file 
+# file name tut1.py
+import os 
+
+def importent():
+    print("setu is good coder ")
+def main():
+    print("hy, I am setu pate ")
+    print(os.listdir())
+    
+if __name__ == "__main__":
+    main()
+
+# file name tut2.py 
+import tut1
+
+tut1.importent()
+tut1.main()</code></pre></li>
+
+        <li>python filter()<pre class="language-python"><code># filter fuction 
+def greter_then(n):
+    if n>2:
+        return True
+    else:
+        return False
+
+h=[1,2,5,-2,-5,1,2,6,7,9]
+greter_then=list(filter(greter_then,h))
+print(greter_then)</code></pre></li>
+
+        <li>python reduce()<pre class="language-python"><code># reduce is func is used to onby onby sum
+from functools import reduce
+def sum_num(a,b):
+    return a+b
+line=reduce(sum_num,[1,2,3,4])
+print(line)</code></pre></li>
+
+        <li>python slaicing<pre class="language-python"><code># slaising 
+list1=[1,2,3,4,8,44,66,99]
+print(list1[:5])
+print(list1[1:44])
+print(list1[1:])
+print(list1[:])
+print(list1[-2:])
+print(list1[-5:-2])
+print(list1[::3])
+print(list1[::1])  #all list show
+print(list1[::-1])  #reverse list</code></pre></li>
+
+        <li>python bisect module<pre class="language-python"><code>import bisect
+from os import listdir
+
+# use only shorted list 
+number =6
+list=[1,2,3,4,5,7,8]
+print(bisect.bisect(list,number))
+bisect.insort(list,number)
+print(list)
+# out put 
+5
+[1, 2, 3, 4, 5, 6, 7, 8]</code></pre></li>
+
+        <li>python format()<pre class="language-python"><code># format fuction 
+list1=["setu","yash","harry"]
+list2=["95","80","90"]
+
+for i in range(len(list1)):
+    # bidefolult order is 0 and 1
+    template="The marks of {1} is {0}"
+    print(template.format(list1[i],list2[i]))</code></pre></li>
+
+        <li>python<pre class="language-python"><code></code></pre></li>
+
+        <li>python<pre class="language-python"><code></code></pre></li>
+
+        <li>python<pre class="language-python"><code></code></pre></li>
+
+        <li>python<pre class="language-python"><code></code></pre></li>
+
+       </ol>
+    </div>  
+<script src="/Cheetsheet.js"></script>
+</body>
+</html>
