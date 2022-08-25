@@ -30,7 +30,6 @@
     <div class="div">
         <ol>
          <li>PHP<pre class="language-javascript"><code> &lt;!-- first start you jame  --&gt;
-
 &lt;!-- php basice forment  --&gt;
 &lt;?php  //opening php tag 
 // hear echo is use for print word 
@@ -86,6 +85,20 @@ if(isset($_GET['delete'])){
     $sno = $_GET['delete'];
     echo $sno;
 }
+&lt;!--==============================&gt; Get url of current page  --&gt;
+$CurPageURL =  $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+echo "The URL of current page: ". $CurPageURL;
+&lt;!-- =================================&gt; Concate stirng /String oprator --&gt;
+&lt;?php
+$b = $a . "World!";
+// This works:
+echo "qwe{$a}rty"; // qwe12345rty, using braces
+echo "qwe" . $a . "rty"; // qwe12345rty, concatenation used
+
+// Does not work:
+echo 'qwe{$a}rty'; // qwe{$a}rty, single quotes are not parsed
+echo "qwe$arty"; // qwe, because $a became $arty, which is undefined
+?&gt;
 &lt;!--==============================&gt; php DataType --&gt;
 &lt;?php 
 $name = "setu";
@@ -154,7 +167,7 @@ echo var_dump($x&lt;&gt;$y);
 function processMarks($marksarray){
     $sum = 0;
     foreach ($marksarray as $value) {
-       $sum += $value;
+        $sum += $value;
     }
     return $sum;
 }
@@ -168,7 +181,7 @@ echo "Rohan total marks is $sumMarks &lt;br&gt;";
 &lt;?php
 // php.net.data
 // https://www.php.net/manual/en/datetime.format.php
-echo "this is tutorial is Data fucntion"
+echo "this is tutorial is Data fucntion";
 $year = date("Y");
 echo "$year";
 ?&gt;
@@ -181,7 +194,7 @@ $arr = array("setu","patel",23);
 $favcol = array(
     'setu' =&gt; 'blue',
     'Mohan' =&gt; 'yellow',
-     8 =&gt; 'red'
+        8 =&gt; 'red'
 );
 // echo $favcol['setu'];
 // echo '&lt;br&gt;';
@@ -215,9 +228,9 @@ for ($i=0; $i &lt; count($Multi) ; $i++) {
 // Three dimation array 
 $Multi = array(
     array(
-       array(1,2,3,4),  
-       array(4,0,9,5),  
-       array(5,6,7,8),  )
+        array(1,2,3,4),  
+        array(4,0,9,5),  
+        array(5,6,7,8),  )
 
 );
 for ($i=0; $i &lt; count($Multi) ; $i++) { 
@@ -225,7 +238,7 @@ for ($i=0; $i &lt; count($Multi) ; $i++) {
     for ($j=0; $j &lt; count($Multi[$i]); $j++) { 
 
         for ($l=0; $l &lt; count($Multi[$i]); $l++) { 
-           echo $Multi[$i][$j][$l];
+            echo $Multi[$i][$j][$l];
         }
         echo "&lt;br&gt;";
     }
@@ -369,7 +382,7 @@ if($num &gt;0){
     $row = mysqli_fetch_assoc($result);
     echo var_dump($row);
     echo "&lt;br&gt;";
-  
+    
 // ==================&gt; return row using whiel loop 
 while($row = mysqli_fetch_assoc($result)){
     // echo var_dump($row);
@@ -488,10 +501,10 @@ fclose($fptr);
 
 =====================================&gt; append  (fwrite())
 /* a = That is use for append content at last  in file without rmoving existing contente 
-     That is use for create file if your file is not exist */
+        That is use for create file if your file is not exist */
 $fptr = fopen('data3.txt', "a");
 fwrite($fptr,"\n That is last content2");
-     
+        
 ======================================&gt; close file 
 fclose($fptr);
 ?&gt;
@@ -558,7 +571,7 @@ echo "&lt;br&gt; You hava been logged out";
 
 =======================================&gt; password protected function 
 &lt;?php
-// hear password length is 255
+    =============&gt;hear password length is 255
 // hase function is use for convert password in hase type 
 $hase = password_hash($Password,PASSWORD_DEFAULT);
 // password_verify() function is use of check userpassword and hase password match or not 
@@ -571,7 +584,21 @@ password_verify($password, $row['password'])
 = &gt; if you are take post request in form, you are not share that page url and use search bar
 = &gt; if you are take get request in form, you are share that page url
 
-         </code></pre></li>
+
+&lt;!-- =======================================&gt; script for data base (Template ) --&gt;
+&lt;!-- connect data base  --&gt;
+
+&lt;?php
+// script to connect to the database 
+$servername = 'localhost';
+$username = 'root';
+$password = '';
+$database = '';
+
+$conn = mysqli_connect($servername,$username,$password,$database);
+
+?&gt;
+</code></pre></li>
             
        </ol>
     </div>
