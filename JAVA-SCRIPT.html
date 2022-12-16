@@ -68,6 +68,8 @@ Array.splice(index, 1);
 
 // ======================&gt;relode window 
 window.location.relode();
+window.open('index.php','_self');
+
 // ======================&gt;window path insert value  
 window.location = `/phpsetu/DATABASE/iNotes.php?delete=${e_value}`;
 
@@ -510,31 +512,31 @@ noly one boys all work done.
 
 
 =====================&gt;xhr
- // instantial an xhr object (open xhr object)
- const xhr = new XMLHttpRequest();
+    // instantial an xhr object (open xhr object)
+    const xhr = new XMLHttpRequest();
 
- // open the boject (get requvesh)
- xhr.open('GET','https://jsonplaceholder.typicode.com/todos/1',true)
- // GET = only give url
- // getdata , place of data , Asynchronose and synchronose
+    // open the boject (get requvesh)
+    xhr.open('GET','https://jsonplaceholder.typicode.com/todos/1',true)
+    // GET = only give url
+    // getdata , place of data , Asynchronose and synchronose
 
- // on progrees senner (losing event use)
- xhr.onprogress = function(){
-     console.log('On progress');
-     // 200 is http url
+    // on progrees senner (losing event use)
+    xhr.onprogress = function(){
+        console.log('On progress');
+        // 200 is http url
 
 
 xhr.onload = function() {
     // 200 is http url 
     if(this.status === 200){
-       let obj = JSON.parse(this.responseText); 
-       console.log(obj)
-       let list = document.getElementById('list');
-       str = "";
-       for (key in obj){
-           str += `&lt;li&gt; ${obj[key].id}&lt;/li&gt;`
-       }
-       list.innerHTML = str;
+        let obj = JSON.parse(this.responseText); 
+        console.log(obj)
+        let list = document.getElementById('list');
+        str = "";
+        for (key in obj){
+            str += `&lt;li&gt; ${obj[key].id}&lt;/li&gt;`
+        }
+        list.innerHTML = str;
     }
     else{
         console.log('some error noccured')
@@ -554,7 +556,7 @@ function enrollStudent(students,collback)
         console.log('student has been enroll');
         collback(); //this is collback fucntion
     }, 3000);
-     // setInterval is run for repeted 
+        // setInterval is run for repeted 
     setInterval(function() {
         student.push(students);
         console.log('student has been enroll');
@@ -698,7 +700,7 @@ try{
     console.log('this is finally block');
 }
 
-==========================&gt;regular experience 
+==========================&gt;regular experience   user for blur event 
 
 // syntext for ragular expression 
 let reg = /setu/;
@@ -753,6 +755,8 @@ regex = /ses?tue?s/;
 // hear /s\*tu/ is match for s*tu
 regex = /s\*tu/;
 
+==============================&gt; Regular Expressions -example 
+    
 ==============================&gt; Regular Expressions - Character sets 
 // (only one char match in [])
 
@@ -786,7 +790,8 @@ regex = /hai\b/;         //heare  \b means  word boundary
 regex = /s(?=y)/
 regex = /s(?!y)/
 
-==========================&gt; add class in class list
+==========================&gt; add class in class list 
+// user qureyselector element 
 email.classList.add('is-invalid')
 email.classList.remove('is-invalid')
 
@@ -933,7 +938,7 @@ const whiteboxes = document.getElementsByClassName("drag1");
 imgBox.addEventListener('dragstart', (e) =&gt; {
     console.log('This is dragstart has been treeger');
     e.target.className += ' hold'
-   
+    
     setTimeout(() =&gt; {
         e.target.className=' hide'
     }, 0);
@@ -969,7 +974,7 @@ snoEdit.value = e.target.id.substr(1,);
 /* That is use for calculate value  */
 let Calculate = element.eval();
 
-================================&gt; Play Audio 
+================================&gt; Play Audio song
 let Audioturn = new Audio("/music/x_0.wav");
 let gameover = new Audio("/music/winnersong.wav");
 Audioturn.play();
@@ -982,10 +987,105 @@ document.onkeydown  = function(e) {
     // The key e.keyCode is use for get key code in keyboard 
     // console.log("Key code is :", e.keyCode);
     if(e.keyCode == 38){
- 
+    
     }
     
-} </code></pre></li>
+}
+
+================================&gt; donwload file  download div into png 
+=&gt; create canvas for use click event 
+=&gt; canvas genrated  and canvase downlode element is differt crated 
+    1] add event for genrate canvas element (not &lt;a  href="" id="" class="" &gt;download&lt;/a&gt;)
+    2] add not event for downloade   &lt;a  href="" id="" class="" &gt;download&lt;/a&gt;
+=&gt;if you are downlode canvase but when that is seconde canvas , if you are delete remove first canvase before seconde canvase genrated
+// statp 1 : import htmj2.canvase 
+// stap2 : create element for insert canvase 
+
+statp 1:   &lt;div class="left_side"&gt; file &lt;/div&gt;
+statp 2:     &lt;divl class="result"&gt;&lt;/divl&gt;
+statp 3:         &lt;a  href="" id="" class="" &gt;download&lt;/a&gt;
+
+html2canvas(left_side).then(function (canvas) {
+    document.querySelector(".result").append(canvas);
+    let cvs = document.querySelector("canvas");
+    let a =document.querySelector("#downlodeCardbtn");
+    // a.href = cvs.toDataURL();
+    // a.download = "html2canvase.png"; //bidefoult downld file into png
+    a.href = cvs.toDataURL("image/jpeg");
+    a.download = "BirthdayCard.jpeg"; //bidefoult downld file into png
+
+});
+document.querySelector(".result").style.display='none';
+
+=======================&gt; Select value in Dropdown list (select and option)
+let fontsizePlus = document.getElementById('fontsizePlus');
+let value = fontsizePlus.options[fontsizePlus.selectedIndex].value;
+
+====================================&gt; move element in java script 
+var dragItem2 = document.querySelector("#bBGImg");
+        dragItem2.addEventListener("click", (element) =&gt; {
+            var container = document.querySelector("#editeCard");
+
+            var active = false;
+            var currentX;
+            var currentY;
+            var initialX;
+            var initialY;
+            var xOffset = 0;
+            var yOffset = 0;
+
+            container.addEventListener("touchstart", dragStart, false);
+            container.addEventListener("touchend", dragEnd, false);
+            container.addEventListener("touchmove", drag, false);
+
+            container.addEventListener("mousedown", dragStart, false);
+            container.addEventListener("mouseup", dragEnd, false);
+            container.addEventListener("mousemove", drag, false);
+
+            function dragStart(e) {
+                if (e.type === "touchstart") {
+                    initialX = e.touches[0].clientX - xOffset;
+                    initialY = e.touches[0].clientY - yOffset;
+                } else {
+                    initialX = e.clientX - xOffset;
+                    initialY = e.clientY - yOffset;
+                }
+
+                if (e.target === element.target) {
+                    active = true;
+                }
+            }
+
+            function dragEnd(e) {
+                initialX = currentX;
+                initialY = currentY;
+
+                active = false;
+            }
+
+            function drag(e) {
+                if (active) {
+
+                    e.preventDefault();
+
+                    if (e.type === "touchmove") {
+                        currentX = e.touches[0].clientX - initialX;
+                        currentY = e.touches[0].clientY - initialY;
+                    } else {
+                        currentX = e.clientX - initialX;
+                        currentY = e.clientY - initialY;
+                    }
+
+                    xOffset = currentX;
+                    yOffset = currentY;
+                    setTranslate(currentX, currentY, element.target);
+                }
+            }
+
+            function setTranslate(xPos, yPos, el) {
+                el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
+            }
+        })</code></pre></li>
             
        </ol>
     </div>

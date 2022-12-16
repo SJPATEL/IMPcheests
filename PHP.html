@@ -30,7 +30,6 @@
     <div class="div">
         <ol>
          <li>PHP<pre class="language-javascript"><code> &lt;!-- first start you jame  --&gt;
-
 &lt;!-- php basice forment  --&gt;
 &lt;?php  //opening php tag 
 // hear echo is use for print word 
@@ -40,7 +39,7 @@ echo "This is setu file";
 &lt;!-- new line  --&gt;
 echo "&lt;br&gt;"
 
-&lt;!--==============================&gt; php variable --&gt;
+&lt;!--=================&gt; php variable --&gt;
 &lt;!-- ====&gt; Rulse for creating variable  --&gt;
 1 =&gt; Variable start with $ 
 2 =&gt; Must can not start with number 
@@ -86,7 +85,21 @@ if(isset($_GET['delete'])){
     $sno = $_GET['delete'];
     echo $sno;
 }
-&lt;!--==============================&gt; php DataType --&gt;
+&lt;!--==============================&gt; Get url of current page  --&gt;
+$CurPageURL =  $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+echo "The URL of current page: ". $CurPageURL;
+&lt;!-- =================================&gt; Concate stirng /String oprator --&gt;
+&lt;?php
+$b = $a . "World!";
+// This works:
+echo "qwe{$a}rty"; // qwe12345rty, using braces
+echo "qwe" . $a . "rty"; // qwe12345rty, concatenation used
+
+// Does not work:
+echo 'qwe{$a}rty'; // qwe{$a}rty, single quotes are not parsed
+echo "qwe$arty"; // qwe, because $a became $arty, which is undefined
+?&gt;
+&lt;!--========================&gt; php DataType --&gt;
 &lt;?php 
 $name = "setu";
 $income = 200;
@@ -149,12 +162,12 @@ $y = 45;
 echo var_dump($x&lt;&gt;$y);
 ?&gt;
 
-&lt;!-- ================================&gt; function  --&gt;
+&lt;!-- ====================&gt; function  --&gt;
 &lt;?php
 function processMarks($marksarray){
     $sum = 0;
     foreach ($marksarray as $value) {
-       $sum += $value;
+        $sum += $value;
     }
     return $sum;
 }
@@ -168,12 +181,12 @@ echo "Rohan total marks is $sumMarks &lt;br&gt;";
 &lt;?php
 // php.net.data
 // https://www.php.net/manual/en/datetime.format.php
-echo "this is tutorial is Data fucntion"
+echo "this is tutorial is Data fucntion";
 $year = date("Y");
 echo "$year";
 ?&gt;
 
-&lt;!-- ==========================================&gt; Associative Array and Index Array --&gt;
+&lt;!-- ======================&gt; Associative Array and Index Array --&gt;
 &lt;?php
 // This are called index array 
 $arr = array("setu","patel",23);
@@ -181,7 +194,7 @@ $arr = array("setu","patel",23);
 $favcol = array(
     'setu' =&gt; 'blue',
     'Mohan' =&gt; 'yellow',
-     8 =&gt; 'red'
+        8 =&gt; 'red'
 );
 // echo $favcol['setu'];
 // echo '&lt;br&gt;';
@@ -194,7 +207,7 @@ foreach ($favcol as $key =&gt; $value) {
 }
 ?&gt;
 
-====================================&gt; Multidimation Array
+===========================&gt; Multidimation Array
 &lt;?php
 echo "This is tutorial is Multidimation Array";
 echo "&lt;br&gt;";
@@ -215,9 +228,9 @@ for ($i=0; $i &lt; count($Multi) ; $i++) {
 // Three dimation array 
 $Multi = array(
     array(
-       array(1,2,3,4),  
-       array(4,0,9,5),  
-       array(5,6,7,8),  )
+        array(1,2,3,4),  
+        array(4,0,9,5),  
+        array(5,6,7,8),  )
 
 );
 for ($i=0; $i &lt; count($Multi) ; $i++) { 
@@ -225,7 +238,7 @@ for ($i=0; $i &lt; count($Multi) ; $i++) {
     for ($j=0; $j &lt; count($Multi[$i]); $j++) { 
 
         for ($l=0; $l &lt; count($Multi[$i]); $l++) { 
-           echo $Multi[$i][$j][$l];
+            echo $Multi[$i][$j][$l];
         }
         echo "&lt;br&gt;";
     }
@@ -292,7 +305,7 @@ else{
 }
 ?&gt;
 
-====================================&gt; Create Table in db connecting data base 
+=====================&gt; Create Table in db connecting data base 
 &lt;?php
 //============&gt; Connecting to the Database 
 $servername = "localhost";
@@ -325,7 +338,7 @@ else{
     echo "The db was not created successfully because of this error ======&gt; " . mysqli_connect_error();
 }
 
-===================================================&gt; insert Data in Table 
+=========================&gt; insert Data in Table 
 
 // $sql = "INSERT INTO `student` ( `Name`, `Datajoin`) VALUES ( 'MOHAN PATEL', '2023-07-01');" ;
 
@@ -346,7 +359,7 @@ else{
 }
 ?&gt;
 
-=====================================&gt; display the data in database
+========================&gt; display the data in database
 &lt;?php
 echo "This tutorial is selecte data and display";
 
@@ -369,7 +382,7 @@ if($num &gt;0){
     $row = mysqli_fetch_assoc($result);
     echo var_dump($row);
     echo "&lt;br&gt;";
-  
+    
 // ==================&gt; return row using whiel loop 
 while($row = mysqli_fetch_assoc($result)){
     // echo var_dump($row);
@@ -397,7 +410,7 @@ if($num&gt;0){
     }
 }
 
-=========================&gt; Updata data in database 
+====================&gt; Updata data in database 
 $sql = "UPDATE `student` SET `Name` = 'MOHAN' WHERE `student`.`s_no` = 5;";
 $result = mysqli_query($conn, $sql);
 // ================&gt;Print number of affected row 
@@ -411,7 +424,7 @@ if($result){
     echo '&lt;br&gt;';
 }
 
-=================================== delete record in table 
+========================== delete record in table 
 // delete record in table  
 $sql = "DELETE FROM `com_sharholder` WHERE `SNo` = 3" ;
 // delete Limit record in table  
@@ -428,7 +441,7 @@ if($result){
 }
 ?&gt;
 
-=================================== require and include
+================ require and include
 &lt;?php
 // include and require is use for add onther file in that current file 
 // deffernce between include and require :-- 
@@ -439,7 +452,7 @@ if($result){
 
 ?&gt;
 
-====================================&gt; read file fucntion 
+=================&gt; read file fucntion 
 &lt;?php
 // read file fucntion 
 // if you are used echo , print content with char 
@@ -450,7 +463,7 @@ $file = readfile("data.txt");
 $file = readfile("data.html");
 // echo $file;
 
-====================================&gt;  fopen() , fread() , filesize() 
+=======================&gt;  fopen() , fread() , filesize() 
 $fptr = fopen('data.txt' ,"r");  // That is return resources and false 
 // echo $fptr;
 // if(!$fptr){
@@ -460,7 +473,7 @@ $fptr = fopen('data.txt' ,"r");  // That is return resources and false
 $content = fread($fptr , filesize("data.txt"));
 echo $content;
 
-=====================================&gt; fgets() function  
+========================&gt; fgets() function  
 // fgets() fucntion is use for read one by one line in  file 
 echo fgets($fptr);
 echo fgets($fptr);
@@ -470,7 +483,7 @@ while($s = fgets($fptr)){
     echo $s;
 }
 
-=====================================&gt; fgetc() function 
+========================&gt; fgetc() function 
 // fgetc() fucntion is use for read character  in  file 
 echo fgetc($fptr);
 // read all character in file 
@@ -478,7 +491,7 @@ while($s = fgetc($fptr)){
     echo $s;
 }
 
-=====================================&gt; Write in file (fwrite())
+=================&gt; Write in file (fwrite())
 //================&gt; w = That is use for create file if your file is not exist 
 $fptr = fopen('data1.txt', "w");
 // fwrite is use for wirte line by line in file 
@@ -486,17 +499,17 @@ fwrite($fptr , "This is data file \n");
 fwrite($fptr , "This is secon line on file");
 fclose($fptr);
 
-=====================================&gt; append  (fwrite())
+=================&gt; append  (fwrite())
 /* a = That is use for append content at last  in file without rmoving existing contente 
-     That is use for create file if your file is not exist */
+        That is use for create file if your file is not exist */
 $fptr = fopen('data3.txt', "a");
 fwrite($fptr,"\n That is last content2");
-     
-======================================&gt; close file 
+        
+==================&gt; close file 
 fclose($fptr);
 ?&gt;
 
-======================================&gt; cookie 
+==================&gt; cookie 
 &lt;?php
 // Syntax to set cookie
 // "/" mince all website set 
@@ -508,7 +521,7 @@ echo $cat;
 
 ?&gt;
 
-======================================&gt; sessions
+=======================&gt; sessions
 &lt;!-- first file  --&gt;
 &lt;!-- =============&gt;start session  --&gt;
 &lt;?php
@@ -552,27 +565,325 @@ session_destroy();
 echo "&lt;br&gt; You hava been logged out";
 ?&gt;
 
-=======================================&gt; exit 
+=======================&gt; exit 
 &lt;!-- That is exit for out php script  --&gt;
 &lt;?php exit ?&gt;
 
-=======================================&gt; password protected function 
+=========================&gt; password protected function 
 &lt;?php
-// hear password length is 255
+    =============&gt;hear password length is 255
 // hase function is use for convert password in hase type 
 $hase = password_hash($Password,PASSWORD_DEFAULT);
 // password_verify() function is use of check userpassword and hase password match or not 
 password_verify($password, $row['password'])
 ?&gt;
 
-========================================&gt; GET AND POST REQUEST 
+=======================&gt; GET AND POST REQUEST 
 =&gt; GET = request work for url 
 =&gt; POST = request work for  DataBase
 = &gt; if you are take post request in form, you are not share that page url and use search bar
 = &gt; if you are take get request in form, you are share that page url
 
-         </code></pre></li>
+
+&lt;!-- =====================&gt; script for data base (Template ) --&gt;
+&lt;!-- connect data base  --&gt;
+
+&lt;?php
+// script to connect to the database 
+$servername = 'localhost';
+$username = 'root';
+$password = '';
+$database = '';
+
+$conn = mysqli_connect($servername,$username,$password,$database);
+
+?&gt;
+</code></pre></li>
+
+    <li>PHP<pre class="language-javascript"><code> &lt;!-- Importent script for data base  --&gt;
+
+======================&gt; connect data  base 
+&lt;?php
+// script to connect to the database 
+$servername = '';
+$username = '';
+$password = '';
+$database = '';
+
+$conn = mysqli_connect($servername,$username,$password,$database);
+
+?&gt;
+
+======================&gt; Sing Up 
+&lt;?php
+
+  // Cheack server request method is post or not
+ if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    // Connect data base file 
+    include 'ConnectDB.php';
+
+    $userName = $_POST[''];
+    $userpassword = $_POST[''];
+    $cuserpassword = $_POST[''];
+    
+    // Check user is alrady exist in data base or not 
+    $sqlchack = "qurey for chaeack get user name";
+        $result = mysqli_query($conn,$sqlchack);
+        $row =mysqli_num_rows($result);
+    
+        if($row&gt;0){
+        // cheack user has been alrady exist in data base 
+        header("location: _____________ _ _ ?UE=true");
+    
+        }else{
+          // cheack password match between password and confrim password and user is save in data base 
+          if($userpassword == $cuserpassword){
+              if(!($userName == ""  || $userpassword == "" || $cuserpassword == "")){
+                // conver password in has 
+                  $has = password_hash($userpassword,PASSWORD_DEFAULT);
+
+                  $sql = "Insert qurey;";
+                  $result =mysqli_query($conn,$sql);
+                  if($result){
+                    header("location: ______________ _ _ ?SU=true");
+                  }  
+              }else{
+                header("location: _________________ _ _ ?DB=true");
+              }
+          }else{
             
+            header("_____________________PDM=true");
+          } 
+    
+        }
+ }
+
+
+ if(isset($_GET['UE']) && $_GET['UE'] == "true"){
+    echo '&lt;div class="alert alert-warning alert-dismissible fade show" role="alert"&gt;
+    &lt;strong&gt;Exist!&lt;/strong&gt; User has been alrady exist ! plase tray different user name !
+    &lt;button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"&gt;&lt;/button&gt;
+  &lt;/div&gt;';
+  }
+  if(isset($_GET['SU']) && $_GET['SU'] == "true"){
+    echo '&lt;div class="alert alert-success alert-dismissible fade show" role="alert"&gt;
+    &lt;strong&gt;Suceess!&lt;/strong&gt; You are has been successfully singup  ! Wlcome to  Card Maker ...
+    &lt;button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"&gt;&lt;/button&gt;
+  &lt;/div&gt;';
+  }
+  if(isset($_GET['PDM']) && $_GET['PDM'] == "true"){
+    echo '&lt;div class="alert alert-warning alert-dismissible fade show" role="alert"&gt;
+    &lt;strong&gt;Error!&lt;/strong&gt; Your password do not match ! Please tray againe !.
+    &lt;button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"&gt;&lt;/button&gt;
+  &lt;/div&gt;';
+  }
+  if(isset($_GET['DB']) && $_GET['DB'] == "true"){
+    echo '&lt;div class="alert alert-danger alert-dismissible fade show" role="alert"&gt;
+    &lt;strong&gt;Sorry!&lt;/strong&gt; Please enter complate detele !.
+    &lt;button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"&gt;&lt;/button&gt;
+  &lt;/div&gt;';
+  }
+
+//   ======================&gt; Login 
+
+ if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+   $luserName = $_POST['username'];
+   $luserpassword = $_POST['password'];
+   
+   // Check Login user exist in database
+   $checkLoginuserN = " query for enter user name is exist in data base";
+   $resultL = mysqli_query($conn,$checkLoginuserN);
+   $num = mysqli_num_rows($resultL);
+
+   if($num==1){
+        //  get password in data base 
+           while($row =mysqli_fetch_assoc($resultL)){
+                // cheack password is match to user password and user password is convert has to simple 
+               if(password_verify($luserpassword , $row['carduserpassword'])){
+               // if($luserpassword == $row['carduserpassword']){
+                   session_start();
+                   $_SESSION['loggdin'] = true;
+                   $_SESSION['user_Name'] = $luserName;
+                   header("location: ___________________ ___?LG=true");
+               }else{
+                   header("location: ____________ _ _ ?LPDM=true");
+               }
+           }
+               
+   }else{
+       header("location: _______ _ _ ?LUN=true");
+
+   }
+  
+}
+
+if(isset($_GET['LG']) && $_GET['LG'] == "true"){
+    echo '&lt;div class="alert alert-success alert-dismissible fade show" role="alert"&gt;
+    &lt;strong&gt;Success!&lt;/strong&gt; You are successfully Loggdin to Card Maker !
+    &lt;button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"&gt;&lt;/button&gt;
+  &lt;/div&gt;';
+  }
+  if(isset($_GET['LPDM']) && $_GET['LPDM'] == "true"){
+    echo '&lt;div class="alert alert-warning alert-dismissible fade show" role="alert"&gt;
+    &lt;strong&gt;Error!&lt;/strong&gt; Your password is rong , Please tray againe !
+    &lt;button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"&gt;&lt;/button&gt;
+  &lt;/div&gt;';
+  }
+  if(isset($_GET['LUN']) && $_GET['LUN'] == "true"){
+    echo '&lt;div class="alert alert-warning alert-dismissible fade show" role="alert"&gt;
+    &lt;strong&gt;Error!&lt;/strong&gt; User Name is not exist , please tray againe !
+    &lt;button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"&gt;&lt;/button&gt;
+  &lt;/div&gt;';
+  }
+
+?&gt;
+
+&lt;?php
+// &lt;!-- junarate randome number in php   --&gt;
+// &lt;!-- ti is grnarte 15 randome number  --&gt;
+$token = random_bytes(15); 
+
+// // &lt;!-- convert number in haxa desimale  --&gt;
+$token= bin2hex(random_bytes(15));
+?&gt;
+
+===================&gt;send email 
+&lt;?php
+$to_email = "setupatel692@gmail.com";
+$subject = "subject enter (header)";
+$body = "actual message enter ";
+$headers = "From: sjpatel298@gmail.com";
+
+// mail function in php 
+if(mail($to_email,$subject,$body,$headers)){
+    echo "send email to $to_email" .mysqli_connect_error();
+}else{
+    echo "email sending faild";
+}
+?&gt;
+
+===================&gt; cookie 
+&lt;?php
+// remember me (save email or password use cookie)  and cookie
+
+// Syntex cookie 
+// $cooki = setcookie(name,value,expire,path,domain,secure,httponly);
+
+// ===================&gt; create cookie 
+setcookie('youtubeuser','vinode', time()+600);
+
+// ==========&gt; read cookie print cookie vlaue 
+echo $_COOKIE['youtubeuser']; // globale variable
+
+// =============&gt; Update cookie 
+// 86400 = 1 day
+setcookie('youtubeuser',"setupatel", time()+86400);
+
+// ===============&gt; delate cookie (Nagatibe value(-))
+setcookie("youtubeuser",NULL, time()-86400);
+?&gt;
+
+
+&lt;!--=============&gt;  stap for create  login withe goolge button --&gt;
+&lt;!-- User Google Api  --&gt;
+stap1 =&gt; Go to Goole Apis and create api progect and get OAuth client id 
+stap2=&gt;create folder and create two file 1]config.php 2] Yourfilename.php  Folder/config.php and yourfilename.php. 
+stap3=&gt;install composer in your crome. then install composer.
+stap4=&gt;install Goole Api clintlibrary in this folder for use CMD.(C:composer require google/apiclient:"^2.0"). then create venderFolder in your folder.
+stap5=&gt; Enter this code in your config.php file.
+&lt;?php
+require_once('vendor/autoload.php');
+
+$google_client = new Google_Client();
+
+$google_client-&gt;setClientId('past Client id ');
+
+$google_client-&gt;setClientSecret('Past Client Secret');
+
+$google_client-&gt;setRedirectUri('http://localhost/allwebsite/googleMap.php');
+
+$google_client-&gt;addScope('email');
+$google_client-&gt;addScope('profile');
+
+session_start();
+?&gt;
+stap6=&gt;then Enter this code in your yourfilename.php  
+&lt;?php
+    include( 'config.php');
+    $login_button = true;
+    if(isset($_GET["code"])){
+        // method for use Access Token 
+        $token = $google_client-&gt;fetchAccessTokenWithAuthCode($_GET["code"]);
+        // cheack if present for token 
+        if(!isset($token['error'])){
+            $google_client-&gt;setAccessToken($token['access_token']);
+            $_SESSION['access_token'] = $token['access_token'];
+
+            $google_service = new Google\Service\Oauth2($google_client);
+            $data = $google_service-&gt;userinfo-&gt;get();
+            
+            if(!empty($data['given_name'])){
+                $_SESSION['user_first_name'] = $data['given_name'];
+            }
+            if(!empty($data['family_name'])){
+                $_SESSION['user_last_name'] = $data['family_name'];
+            }
+            if(!empty($data['email'])){
+                $_SESSION['user_email'] = $data['email'];
+            }
+            if(!empty($data['gender'])){
+                $_SESSION['user_gender'] = $data['gender'];
+            }
+            if(!empty($data['picture'])){
+                $_SESSION['user_image'] = $data['picture'];
+            }
+        }
+    }
+
+    if(!isset($_SESSION['access_token'])){
+        echo '&lt;a&gt; href="'.$google_client-&gt;createAuthUrl().'"&gt; Login With Google &lt;/a&gt;';
+    }
+
+?&gt;
+
+============>not show warningerror function in php 
+ob_start(); 
+
+&lt;!--===========&gt; insert image in data base and featch image in data base  --&gt;
+&lt;?php
+$product_image1 = $_FILES['product_image1']['name'];
+$product_ = $_FILES['product_image1']['tmp_name'];
+
+// &lt;!--============&gt; move image for onother folder in php  --&gt;
+
+move_uploaded_file($temp_image1, "./prodcut_image/$product_image1");
+?&gt;
+
+======================&gt; get ip address function in php   
+&lt;?php
+function getIPAddress()
+{
+    //whether ip is from the share internet  
+    if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+        $ip = $_SERVER['HTTP_CLIENT_IP'];
+    }
+    //whether ip is from the proxy  
+    elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    }
+    //whether ip is from the remote address  
+    else {
+        $ip = $_SERVER['REMOTE_ADDR'];
+    }
+    return $ip;
+}
+    // $ip = get_ip_address();
+    // echo 'User Real IP Address - ' . $ip;
+
+?&gt;
+
+</code></pre></li>
        </ol>
     </div>
 
